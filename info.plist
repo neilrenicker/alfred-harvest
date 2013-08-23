@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string></string>
+	<key>connections</key>
+	<dict/>
+	<key>createdby</key>
+	<string>Neil Renicker</string>
+	<key>description</key>
+	<string>Start, stop and view your Harvest timer</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Harvest</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>escaping</key>
+				<integer>36</integer>
+				<key>keyword</key>
+				<string>har</string>
+				<key>runningsubtext</key>
+				<string>Generating your timesheet...</string>
+				<key>script</key>
+				<string>php -f harvest.php</string>
+				<key>subtext</key>
+				<string>Choose the project you want to start...</string>
+				<key>title</key>
+				<string>Track your time</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>4A67BAC3-0B1F-4588-A927-C99D01112342</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string></string>
+	<key>uidata</key>
+	<dict>
+		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+	</dict>
+	<key>webaddress</key>
+	<string>http://neilrenicker.com</string>
+</dict>
+</plist>
