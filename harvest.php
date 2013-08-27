@@ -18,12 +18,31 @@
   curl_setopt($ch, CURLOPT_VERBOSE, 1);
   curl_setopt($ch, CURLOPT_TIMEOUT, 60);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-  $data = curl_exec($ch);
+  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+  $data_raw = curl_exec($ch);
 
   if (curl_errno($ch)) {
     print "Error: " . curl_error($ch);
   } else {
-    var_dump($data);
     curl_close($ch);
   }
+
+  $data = json_decode($data_raw, true);
+  $xml = "<?xml version=\"1.0\"?>\n<items>\n";
+
+  foreach ($data["day_entries"] as $day_entry){
+    $project = $day_entry["project"];
+    $task    = $day_entry["task"];
+    $client  = $day_entry["client"];
+    $hours   = $day_entry["hours"];
+
+    $xml .= "<item arg=\"https://$shortname.harvestapp.com\">\n";
+    $xml .= "<title>$project – $task: $hours</title>\n";
+    $xml .= "<subtitle>Client: $client</subtitle>\n";
+    $xml .= "<icon>icon.png</icon>\n";
+    $xml .= "</item>\n";
+  }
+
+  $xml .="</items>";
+  echo $xml;
 ?>

@@ -5,7 +5,19 @@
 	<key>bundleid</key>
 	<string></string>
 	<key>connections</key>
-	<dict/>
+	<dict>
+		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>0A6089E5-C406-4F3C-9C12-3AE8CDAEC055</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
 	<key>createdby</key>
 	<string>Neil Renicker</string>
 	<key>description</key>
@@ -20,11 +32,11 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>36</integer>
 				<key>keyword</key>
-				<string>har</string>
+				<string>hv</string>
 				<key>runningsubtext</key>
 				<string>Generating your timesheet...</string>
 				<key>script</key>
@@ -36,7 +48,7 @@
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
@@ -45,11 +57,33 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>0A6089E5-C406-4F3C-9C12-3AE8CDAEC055</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0A6089E5-C406-4F3C-9C12-3AE8CDAEC055</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
 		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
 		<dict>
 			<key>ypos</key>
