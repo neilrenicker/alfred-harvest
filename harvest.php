@@ -15,7 +15,7 @@
 
   $ch = curl_init();
   curl_setopt($ch, CURLOPT_URL, $get_daily);
-  curl_setopt($ch, CURLOPT_VERBOSE, 1);
+  curl_setopt($ch, CURLOPT_VERBOSE, 0);
   curl_setopt($ch, CURLOPT_TIMEOUT, 60);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
@@ -37,8 +37,8 @@
     $hours   = $day_entry["hours"];
 
     $xml .= "<item arg=\"https://$shortname.harvestapp.com\">\n";
-    $xml .= "<title>$project – $task: $hours</title>\n";
-    $xml .= "<subtitle>Client: $client</subtitle>\n";
+    $xml .= "<title>[$hours] $project</title>\n";
+    $xml .= "<subtitle>$client, $task</subtitle>\n";
     $xml .= "<icon>icon.png</icon>\n";
     $xml .= "</item>\n";
   }

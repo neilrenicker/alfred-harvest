@@ -10,7 +10,7 @@
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>0A6089E5-C406-4F3C-9C12-3AE8CDAEC055</string>
+				<string>A87D86DC-4941-4857-8BEC-A49BD68AFC93</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -34,7 +34,7 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>4</integer>
 				<key>keyword</key>
 				<string>hv</string>
 				<key>runningsubtext</key>
@@ -68,9 +68,9 @@
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.output.script</string>
+			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>0A6089E5-C406-4F3C-9C12-3AE8CDAEC055</string>
+			<string>A87D86DC-4941-4857-8BEC-A49BD68AFC93</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -79,12 +79,12 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
-		<key>0A6089E5-C406-4F3C-9C12-3AE8CDAEC055</key>
+		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
 		<dict>
 			<key>ypos</key>
 			<real>50</real>
 		</dict>
-		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
+		<key>A87D86DC-4941-4857-8BEC-A49BD68AFC93</key>
 		<dict>
 			<key>ypos</key>
 			<real>50</real>
