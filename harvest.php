@@ -1,11 +1,11 @@
 <?php
 
-  // $shortname   = "sparkbox";
-  // $email		   = "neil@heysparkbox.com";
-  // $password    = "whi-mimo-kej";
+  $shortname   = "sparkbox";
+  $email		   = "neil@heysparkbox.com";
+  $password    = "whi-mimo-kej";
 
-  $credentials = "neil@heysparkbox.com:whi-mimo-kej";
-  $get_daily   = "https://sparkbox.harvestapp.com/daily";
+  $credentials = $email . ":" . $password;
+  $get_daily   = "https://$shortname.harvestapp.com/daily";
 
   $headers = array (
     "Content-type: application/json",
