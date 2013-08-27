@@ -39,13 +39,13 @@
 
     if ( $active ) {
       $xml .= "<item arg=\"https://$shortname.harvestapp.com\">\n";
-      $xml .= "<title>[$hours...] – $project</title>\n";
+      $xml .= "<title>$hours hours – $project</title>\n";
       $xml .= "<subtitle>$client, $task</subtitle>\n";
       $xml .= "<icon>stop.png</icon>\n";
       $xml .= "</item>\n";
     } else {
       $xml .= "<item arg=\"https://$shortname.harvestapp.com\">\n";
-      $xml .= "<title>[$hours] – $project</title>\n";
+      $xml .= "<title>$hours hours – $project</title>\n";
       $xml .= "<subtitle>$client, $task</subtitle>\n";
       $xml .= "<icon>go.png</icon>\n";
       $xml .= "</item>\n";
