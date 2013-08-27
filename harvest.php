@@ -19,12 +19,11 @@
   curl_setopt($ch, CURLOPT_TIMEOUT, 60);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
   $data = curl_exec($ch);
-  curl_close($ch);
 
-
-  // while($entries < 1)
-  // {
-  // 	$response = query_harvest('daily/')
-  // }
-
+  if (curl_errno($ch)) {
+    print "Error: " . curl_error($ch);
+  } else {
+    var_dump($data);
+    curl_close($ch);
+  }
 ?>
