@@ -35,12 +35,21 @@
     $task    = $day_entry["task"];
     $client  = $day_entry["client"];
     $hours   = $day_entry["hours"];
+    $active  = $day_entry["timer_started_at"];
 
-    $xml .= "<item arg=\"https://$shortname.harvestapp.com\">\n";
-    $xml .= "<title>[$hours] – $project</title>\n";
-    $xml .= "<subtitle>$client, $task</subtitle>\n";
-    $xml .= "<icon>icon.png</icon>\n";
-    $xml .= "</item>\n";
+    if ( $active ) {
+      $xml .= "<item arg=\"https://$shortname.harvestapp.com\">\n";
+      $xml .= "<title>[$hours...] – $project</title>\n";
+      $xml .= "<subtitle>$client, $task</subtitle>\n";
+      $xml .= "<icon>stop.png</icon>\n";
+      $xml .= "</item>\n";
+    } else {
+      $xml .= "<item arg=\"https://$shortname.harvestapp.com\">\n";
+      $xml .= "<title>[$hours] – $project</title>\n";
+      $xml .= "<subtitle>$client, $task</subtitle>\n";
+      $xml .= "<icon>go.png</icon>\n";
+      $xml .= "</item>\n";
+    }
   }
 
   $xml .= "</items>";
