@@ -37,12 +37,12 @@
     $hours   = $day_entry["hours"];
 
     $xml .= "<item arg=\"https://$shortname.harvestapp.com\">\n";
-    $xml .= "<title>[$hours] $project</title>\n";
+    $xml .= "<title>[$hours] – $project</title>\n";
     $xml .= "<subtitle>$client, $task</subtitle>\n";
     $xml .= "<icon>icon.png</icon>\n";
     $xml .= "</item>\n";
   }
 
-  $xml .="</items>";
+  $xml .= "</items>";
   echo $xml;
 ?>
