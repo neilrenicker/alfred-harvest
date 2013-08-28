@@ -169,6 +169,35 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>4</integer>
+				<key>keyword</key>
+				<string>hv</string>
+				<key>runningsubtext</key>
+				<string>Finding your projects...</string>
+				<key>script</key>
+				<string>php -f new.php</string>
+				<key>subtext</key>
+				<string>View available Harvest projects...</string>
+				<key>title</key>
+				<string>Start new timer</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B9AD2746-03ED-4B02-BEC5-0D492B3C4375</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -177,7 +206,7 @@
 		<key>0D8D08EF-2F39-456A-AE56-29F019C948B4</key>
 		<dict>
 			<key>ypos</key>
-			<real>170</real>
+			<real>160</real>
 		</dict>
 		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
 		<dict>
@@ -189,6 +218,11 @@
 			<key>ypos</key>
 			<real>50</real>
 		</dict>
+		<key>B9AD2746-03ED-4B02-BEC5-0D492B3C4375</key>
+		<dict>
+			<key>ypos</key>
+			<real>280</real>
+		</dict>
 		<key>BBF74D0F-36D2-484B-8AC8-B61B1DC1EC64</key>
 		<dict>
 			<key>ypos</key>
@@ -197,7 +231,7 @@
 		<key>C5BD3793-843D-4903-A7EB-BDA621C84AAF</key>
 		<dict>
 			<key>ypos</key>
-			<real>170</real>
+			<real>160</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
