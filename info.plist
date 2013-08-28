@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.neilrenicker.harvest</string>
 	<key>connections</key>
 	<dict>
 		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
@@ -17,11 +17,22 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>A87D86DC-4941-4857-8BEC-A49BD68AFC93</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BBF74D0F-36D2-484B-8AC8-B61B1DC1EC64</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Neil Renicker</string>
 	<key>description</key>
-	<string>Start, stop and view your Harvest timer</string>
+	<string>Start, stop and view your Harvest timesheet</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -60,10 +71,35 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Harvest timer</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>BBF74D0F-36D2-484B-8AC8-B61B1DC1EC64</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>open {query}</string>
+				<string>php -f toggle.php "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -85,6 +121,11 @@
 			<real>50</real>
 		</dict>
 		<key>A87D86DC-4941-4857-8BEC-A49BD68AFC93</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>BBF74D0F-36D2-484B-8AC8-B61B1DC1EC64</key>
 		<dict>
 			<key>ypos</key>
 			<real>50</real>

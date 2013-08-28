@@ -36,8 +36,14 @@
     $client  = $day_entry["client"];
     $hours   = $day_entry["hours"];
     $active  = $day_entry["timer_started_at"];
+    $id      = $day_entry["id"];
 
-    $xml .= "<item arg=\"https://$shortname.harvestapp.com\">\n";
+    if ( $active ) {
+      $xml .= "<item uid=\"harvestcurrent\" arg=\"$id\">\n";
+    } else {
+      $xml .= "<item arg=\"$id\">\n";
+    }
+
     $xml .= "<title>$hours hours – $project</title>\n";
     $xml .= "<subtitle>$client, $task</subtitle>\n";
 
