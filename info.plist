@@ -6,6 +6,17 @@
 	<string>com.neilrenicker.harvest</string>
 	<key>connections</key>
 	<dict>
+		<key>0D8D08EF-2F39-456A-AE56-29F019C948B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C5BD3793-843D-4903-A7EB-BDA621C84AAF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
 		<array>
 			<dict>
@@ -15,6 +26,14 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0D8D08EF-2F39-456A-AE56-29F019C948B4</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Delete this entry...</string>
 			</dict>
 		</array>
 		<key>A87D86DC-4941-4857-8BEC-A49BD68AFC93</key>
@@ -32,13 +51,30 @@
 	<key>createdby</key>
 	<string>Neil Renicker</string>
 	<key>description</key>
-	<string>Start, stop and view your Harvest timesheet</string>
+	<string>Start, stop and edit your Harvest timers</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
 	<string>Harvest</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>php -f toggle.php "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A87D86DC-4941-4857-8BEC-A49BD68AFC93</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -96,17 +132,40 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>Harvest task deleted!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C5BD3793-843D-4903-A7EB-BDA621C84AAF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f toggle.php "{query}"</string>
+				<string>php -f delete.php "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
-			<string>A87D86DC-4941-4857-8BEC-A49BD68AFC93</string>
+			<string>0D8D08EF-2F39-456A-AE56-29F019C948B4</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -115,6 +174,11 @@
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0D8D08EF-2F39-456A-AE56-29F019C948B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
+		</dict>
 		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
 		<dict>
 			<key>ypos</key>
@@ -129,6 +193,11 @@
 		<dict>
 			<key>ypos</key>
 			<real>50</real>
+		</dict>
+		<key>C5BD3793-843D-4903-A7EB-BDA621C84AAF</key>
+		<dict>
+			<key>ypos</key>
+			<real>170</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
