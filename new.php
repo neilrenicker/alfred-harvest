@@ -7,44 +7,76 @@
   $credentials = $email . ":" . $password;
   $get_daily   = "https://$shortname.harvestapp.com/daily";
 
-  $headers = array (
-    "Content-type: application/json",
-    "Accept: application/json",
-    "Authorization: Basic " . base64_encode($credentials)
-  );
+  $in = "{query}";
 
-  $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $get_daily);
-  curl_setopt($ch, CURLOPT_VERBOSE, 0);
-  curl_setopt($ch, CURLOPT_TIMEOUT, 60);
-  curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-  curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  $data_raw = curl_exec($ch);
+  $have_projects_list = ( file_exists( 'projects.txt' ) ) ? file_get_contents( 'projects.txt' ) : false;
+  $have_tasks_list = ( file_exists( 'tasks.txt' ) ) ? file_get_contents( 'tasks.txt' ) : false;
 
-  if (curl_errno($ch)) {
-    print "Error: " . curl_error($ch);
-  } else {
+  if ( !$have_projects_list ): // no data saved for step 1
+
+    $headers = array (
+      "Content-type: application/json",
+      "Accept: application/json",
+      "Authorization: Basic " . base64_encode($credentials)
+    );
+
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $get_daily);
+    curl_setopt($ch, CURLOPT_VERBOSE, 0);
+    curl_setopt($ch, CURLOPT_TIMEOUT, 60);
+    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    $response = curl_exec($ch);
     curl_close($ch);
-  }
 
-  $data = json_decode($data_raw, true);
+    $fp = fopen('projects.txt', 'w');
+    fwrite($fp, $response);
+    fclose($fp);
 
-  // note: perhaps use SIMPLEXML to output this
-  $xml = "<?xml version=\"1.0\"?>\n<items>\n";
+    $data = json_decode($response, true);
 
-  foreach ($data["projects"] as $project){
-    $name    = $project["name"];
-    $task    = $project["task"];
-    $client  = $project["client"];
-    $id      = $project["id"];
+    $xml = "<?xml version=\"1.0\"?>\n<items>\n";
 
-    $xml .= "<item arg=\"$id\">\n";
-    $xml .= "<title>$name, $client</title>\n";
-    $xml .= "<subtitle>View available tasks...</subtitle>\n";
-    $xml .= "<icon>icon.png</icon>\n";
-    $xml .= "</item>\n";
-  }
+    foreach ($data["projects"] as $project){
+      $name    = $project["name"];
+      $task    = $project["task"];
+      $client  = $project["client"];
+      $id      = $project["id"];
 
-  $xml .= "</items>";
-  echo $xml;
+      $xml .= "<item arg=\"$id\">\n";
+      $xml .= "<title><![CDATA[$name, $client]]></title>\n";
+      $xml .= "<subtitle>View available tasks...</subtitle>\n";
+      $xml .= "<icon>icon.png</icon>\n";
+      $xml .= "</item>\n";
+    }
+
+    $xml .= "</items>";
+    echo $xml;
+
+  elseif ( !$have_tasks_list ): // no data saved for step 2
+    
+    $project_list_raw = file_get_contents('projects.json');
+    $project_list = json_decode($project_list_raw, true);
+    $project_id = trim($argv[1]);
+
+    $xml = "<?xml version=\"1.0\"?>\n<items>\n";
+
+    foreach ($project_list["projects"] as $project){
+      $name    = $project["name"];
+      $task    = $project["task"];
+      $client  = $project["client"];
+      $id      = $project["id"];
+
+      $xml .= "<item arg=\"$id\">\n";
+      $xml .= "<title><![CDATA[$name, $client]]></title>\n";
+      $xml .= "<subtitle>View available tasks...</subtitle>\n";
+      $xml .= "<icon>icon.png</icon>\n";
+      $xml .= "</item>\n";
+    }
+
+    $xml .= "</items>";
+    echo $xml;
+
+  endif;
+
 ?>

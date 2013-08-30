@@ -44,8 +44,8 @@
       $xml .= "<item arg=\"$id\">\n";
     }
 
-    $xml .= "<title>$hours hours – $project</title>\n";
-    $xml .= "<subtitle>$client, $task</subtitle>\n";
+    $xml .= "<title><![CDATA[$hours hours – $project]]></title>\n";
+    $xml .= "<subtitle><![CDATA[$client, $task]]></subtitle>\n";
 
     if ( $active ) {
       $xml .= "<icon>stop.png</icon>\n";
