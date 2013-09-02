@@ -1,19 +1,5 @@
 {
-   "day_entries": [ { "project_id": "3762098",
- "project": "APT: Lenovo RWD Prototypes 3",
- "user_id": 449628,
- "spent_at": "2013-08-29",
- "task_id": "1629017",
- "task": "Development",
- "client": "AppendTo",
- "id": 168027975,
- "notes": null,
- "created_at": "2013-08-29T13:06:39Z",
- "updated_at": "2013-08-29T21:22:45Z",
- 
- "hours_without_timer": 6.44,
- "hours": 6.44}
-],
+   "day_entries": [ ],
    "projects": [{
 "name": "APT: Lenovo RWD Prototypes 3",
 "code": "",
@@ -104,4 +90,4 @@
 "client_currency": "United States Dollars - USD",
 "client_currency_symbol": "$"}
 ],
-   "for_day": "2013-08-29"}
+   "for_day": "2013-09-02"}

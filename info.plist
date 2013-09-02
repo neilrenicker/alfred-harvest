@@ -108,7 +108,7 @@
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
@@ -205,13 +205,13 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>4</integer>
+				<integer>126</integer>
 				<key>keyword</key>
-				<string>hvn</string>
+				<string>hv</string>
 				<key>runningsubtext</key>
 				<string>Finding your projects...</string>
 				<key>script</key>
-				<string>php -f new.php</string>
+				<string>php -f new.php "{query}"</string>
 				<key>subtext</key>
 				<string>View available Harvest projects...</string>
 				<key>title</key>
@@ -219,12 +219,29 @@
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>B9AD2746-03ED-4B02-BEC5-0D492B3C4375</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>test</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3943AAE3-B117-4A2B-99DC-491B1C94C8A2</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -250,23 +267,6 @@
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>19D06122-202C-4DBA-80DF-6923A5FDA091</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>test</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>3943AAE3-B117-4A2B-99DC-491B1C94C8A2</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
