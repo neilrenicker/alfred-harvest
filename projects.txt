@@ -1,10 +1,24 @@
 {
-   "day_entries": [ ],
+   "day_entries": [ { "project_id": "3762098",
+ "project": "APT: Lenovo RWD Prototypes 3",
+ "user_id": 449628,
+ "spent_at": "2013-09-03",
+ "task_id": "1629017",
+ "task": "Development",
+ "client": "AppendTo",
+ "id": 168829079,
+ "notes": null,
+ "created_at": "2013-09-03T13:29:51Z",
+ "updated_at": "2013-09-03T22:14:50Z",
+ 
+ "hours_without_timer": 3.21,
+ "hours": 3.21}
+],
    "projects": [{
 "name": "APT: Lenovo RWD Prototypes 3",
 "code": "",
 "id": 3762098,
-"tasks": [{"name": "Development", "billable": true, "id": 1629017}, {"name": "Informal Training", "billable": true, "id": 2181881}, {"name": "Planning", "billable": true, "id": 1629014}, {"name": "Project Management", "billable": true, "id": 1628998}, {"name": "Support", "billable": true, "id": 2181882}, {"name": "Technical Direction", "billable": true, "id": 2181879}, {"name": "UX", "billable": true, "id": 2181878}],
+"tasks": [{"name": "Development", "billable": true, "id": 1629017}, {"name": "Informal Training", "billable": true, "id": 2181881}, {"name": "Planning", "billable": true, "id": 1629014}, {"name": "Project Management", "billable": true, "id": 1628998}, {"name": "Support", "billable": true, "id": 2181882}, {"name": "Technical Direction", "billable": true, "id": 2181879}, {"name": "Training", "billable": true, "id": 1688038}, {"name": "UX", "billable": true, "id": 2181878}],
 "client": "AppendTo",
 "client_id": 1441344,
 "client_currency": "United States Dollars - USD",
@@ -90,4 +104,4 @@
 "client_currency": "United States Dollars - USD",
 "client_currency_symbol": "$"}
 ],
-   "for_day": "2013-09-02"}
+   "for_day": "2013-09-03"}

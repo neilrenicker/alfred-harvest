@@ -1,10 +1,10 @@
 <?php
 
   $id          = trim($argv[1]);
+
   $shortname   = "sparkbox";
   $email       = "neil@heysparkbox.com";
   $password    = "whi-mimo-kej";
-
   $credentials = $email . ":" . $password;
   $toggle_url = "https://$shortname.harvestapp.com/daily/timer/$id";
 
