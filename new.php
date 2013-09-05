@@ -1,8 +1,8 @@
 <?php
 
-  $shortname   = "sparkbox";
-  $email		   = "neil@heysparkbox.com";
-  $password    = "whi-mimo-kej";
+  $shortname   = "YOUR_SHORTNAME";
+  $email       = "YOUR_EMAIL";
+  $password    = "YOUR_PASSWORD";
 
   $credentials = $email . ":" . $password;
   $get_daily   = "https://$shortname.harvestapp.com/daily";
