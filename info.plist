@@ -3,13 +3,77 @@
 <plist version="1.0">
 <dict>
 	<key>bundleid</key>
-	<string></string>
+	<string>com.neilrenicker.harvest</string>
 	<key>connections</key>
-	<dict/>
+	<dict>
+		<key>0D8D08EF-2F39-456A-AE56-29F019C948B4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C5BD3793-843D-4903-A7EB-BDA621C84AAF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>3943AAE3-B117-4A2B-99DC-491B1C94C8A2</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>19D06122-202C-4DBA-80DF-6923A5FDA091</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A87D86DC-4941-4857-8BEC-A49BD68AFC93</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>0D8D08EF-2F39-456A-AE56-29F019C948B4</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string>Delete this entry...</string>
+			</dict>
+		</array>
+		<key>A87D86DC-4941-4857-8BEC-A49BD68AFC93</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BBF74D0F-36D2-484B-8AC8-B61B1DC1EC64</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B9AD2746-03ED-4B02-BEC5-0D492B3C4375</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3943AAE3-B117-4A2B-99DC-491B1C94C8A2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+	</dict>
 	<key>createdby</key>
 	<string>Neil Renicker</string>
 	<key>description</key>
-	<string>Start, stop and view your Harvest timer</string>
+	<string>Start, stop and edit your Harvest timers</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
@@ -20,11 +84,11 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>2</integer>
+				<integer>1</integer>
 				<key>escaping</key>
-				<integer>36</integer>
+				<integer>4</integer>
 				<key>keyword</key>
-				<string>har</string>
+				<string>hv</string>
 				<key>runningsubtext</key>
 				<string>Generating your timesheet...</string>
 				<key>script</key>
@@ -45,15 +109,203 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>php -f toggle.php "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A87D86DC-4941-4857-8BEC-A49BD68AFC93</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<true/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Harvest timer</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>BBF74D0F-36D2-484B-8AC8-B61B1DC1EC64</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>Harvest task deleted!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>C5BD3793-843D-4903-A7EB-BDA621C84AAF</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>php -f delete.php "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>0D8D08EF-2F39-456A-AE56-29F019C948B4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>keyword</key>
+				<string>hv</string>
+				<key>runningsubtext</key>
+				<string>Finding your projects...</string>
+				<key>script</key>
+				<string>php -f new.php "{query}"</string>
+				<key>subtext</key>
+				<string>View available Harvest projects...</string>
+				<key>title</key>
+				<string>Start new timer</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B9AD2746-03ED-4B02-BEC5-0D492B3C4375</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>php -f new_post.php "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3943AAE3-B117-4A2B-99DC-491B1C94C8A2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Harvest timer</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>19D06122-202C-4DBA-80DF-6923A5FDA091</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
 	<key>uidata</key>
 	<dict>
+		<key>0D8D08EF-2F39-456A-AE56-29F019C948B4</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
+		</dict>
+		<key>19D06122-202C-4DBA-80DF-6923A5FDA091</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>3943AAE3-B117-4A2B-99DC-491B1C94C8A2</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
 		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
 		<dict>
 			<key>ypos</key>
 			<real>50</real>
+		</dict>
+		<key>A87D86DC-4941-4857-8BEC-A49BD68AFC93</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>B9AD2746-03ED-4B02-BEC5-0D492B3C4375</key>
+		<dict>
+			<key>ypos</key>
+			<real>300</real>
+		</dict>
+		<key>BBF74D0F-36D2-484B-8AC8-B61B1DC1EC64</key>
+		<dict>
+			<key>ypos</key>
+			<real>50</real>
+		</dict>
+		<key>C5BD3793-843D-4903-A7EB-BDA621C84AAF</key>
+		<dict>
+			<key>ypos</key>
+			<real>160</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
