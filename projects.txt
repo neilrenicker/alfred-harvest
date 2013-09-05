@@ -1,0 +1,147 @@
+{
+   "day_entries": [ { "project_id": "3762098",
+ "project": "APT: Lenovo RWD Prototypes 3",
+ "user_id": 449628,
+ "spent_at": "2013-09-05",
+ "task_id": "1629017",
+ "task": "Development",
+ "client": "AppendTo",
+ "id": 169410349,
+ "notes": null,
+ "created_at": "2013-09-05T13:43:41Z",
+ "updated_at": "2013-09-05T14:26:38Z",
+ 
+ "hours_without_timer": 0.72,
+ "hours": 0.72}
+],
+   "projects": [{
+"name": "APT: Lenovo RWD Prototypes 3",
+"code": "",
+"id": 3762098,
+"tasks": [{"name": "Development", "billable": true, "id": 1629017}, {"name": "Planning", "billable": true, "id": 1629014}, {"name": "Project Management", "billable": true, "id": 1628998}, {"name": "Support", "billable": true, "id": 2181882}, {"name": "Technical Direction", "billable": true, "id": 2181879}, {"name": "Training", "billable": true, "id": 1688038}, {"name": "UX", "billable": true, "id": 2181878}],
+"client": "AppendTo",
+"client_id": 1441344,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "DPL: Community Relations Form",
+"code": "",
+"id": 4016631,
+"tasks": [{"name": "Design", "billable": true, "id": 1629019}, {"name": "Development", "billable": true, "id": 1629017}, {"name": "Planning", "billable": true, "id": 1629014}, {"name": "Project Management", "billable": true, "id": 1628998}, {"name": "Templates", "billable": true, "id": 1629016}, {"name": "Wireframes", "billable": true, "id": 1629015}],
+"client": "DPL",
+"client_id": 1280949,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "DTY: Sales & Marketing Consulting",
+"code": "",
+"id": 3182388,
+"tasks": [{"name": "Consulting", "billable": true, "id": 1844779}, {"name": "Coordination/Administration", "billable": true, "id": 1639035}, {"name": "Design", "billable": true, "id": 1629019}, {"name": "Planning", "billable": true, "id": 1629014}, {"name": "Project Management", "billable": true, "id": 1628998}, {"name": "Writing", "billable": true, "id": 1658745}],
+"client": "DataYard",
+"client_id": 1282924,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "IMM: Phase 1 Website Rebuild",
+"code": "",
+"id": 2839076,
+"tasks": [{"name": "Design", "billable": true, "id": 1629019}, {"name": "Development", "billable": true, "id": 1629017}, {"name": "Planning", "billable": true, "id": 1629014}, {"name": "Project Management", "billable": true, "id": 1628998}, {"name": "Templates", "billable": true, "id": 1629016}, {"name": "Wireframes", "billable": true, "id": 1629015}],
+"client": "Immaculate Infatuation",
+"client_id": 1284946,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "LSC: lifestylecommunities.com Phase 1",
+"code": "",
+"id": 3659542,
+"tasks": [{"name": "Design", "billable": true, "id": 1629019}, {"name": "Development", "billable": true, "id": 1629017}, {"name": "Planning", "billable": true, "id": 1629014}, {"name": "Project Management", "billable": true, "id": 1628998}, {"name": "Technical Direction", "billable": true, "id": 2181879}, {"name": "Templates", "billable": true, "id": 1629016}, {"name": "Travel", "billable": true, "id": 2235100}, {"name": "Travel (unbillable)", "billable": false, "id": 2277370}, {"name": "Wireframes", "billable": true, "id": 1629015}],
+"client": "Lifestyle Communities",
+"client_id": 1711399,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "MII: Montgomery Web Hourly",
+"code": "",
+"id": 2711424,
+"tasks": [{"name": "Design", "billable": true, "id": 1629019}, {"name": "Development", "billable": true, "id": 1629017}, {"name": "Planning", "billable": true, "id": 1629014}, {"name": "Project Management", "billable": true, "id": 1628998}, {"name": "Templates", "billable": true, "id": 1629016}, {"name": "Wireframes", "billable": true, "id": 1629015}],
+"client": "Montgomery Insurance  Investments",
+"client_id": 1320154,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "OTC: RWD Pre-Launch",
+"code": "",
+"id": 4133897,
+"tasks": [{"name": "Design", "billable": true, "id": 1629019}, {"name": "Development", "billable": true, "id": 1629017}, {"name": "Planning", "billable": true, "id": 1629014}, {"name": "Project Management", "billable": true, "id": 1628998}, {"name": "Technical Direction", "billable": true, "id": 2181879}, {"name": "Templates", "billable": true, "id": 1629016}, {"name": "Wireframes", "billable": true, "id": 1629015}],
+"client": "Oriental Trading Company",
+"client_id": 1287000,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "SPB: Fulltime Employee Training",
+"code": "",
+"id": 3356407,
+"tasks": [{"name": "Design", "billable": false, "id": 1629019}, {"name": "Development", "billable": false, "id": 1629017}, {"name": "Finance", "billable": false, "id": 1650511}, {"name": "Planning", "billable": false, "id": 1629014}, {"name": "Project Management", "billable": false, "id": 1628998}, {"name": "Templates", "billable": false, "id": 1629016}, {"name": "Wireframes", "billable": false, "id": 1629015}],
+"client": "Sparkbox",
+"client_id": 1274787,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "APP: apprentices.seesparkbox.com",
+"code": "",
+"id": 3074776,
+"tasks": [{"name": "Design", "billable": false, "id": 1629019}, {"name": "Development", "billable": false, "id": 1629017}, {"name": "Planning", "billable": false, "id": 1629014}, {"name": "Project Management", "billable": false, "id": 1628998}, {"name": "Templates", "billable": false, "id": 1629016}, {"name": "Wireframes", "billable": false, "id": 1629015}],
+"client": "Sparkbox Apprentice",
+"client_id": 1446704,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "APP: Directed Learning",
+"code": "",
+"id": 3073688,
+"tasks": [{"name": "CodeSchool", "billable": false, "id": 1819355}, {"name": "Other", "billable": false, "id": 1819358}, {"name": "Reading", "billable": false, "id": 1819356}],
+"client": "Sparkbox Apprentice",
+"client_id": 1446704,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "APP: General Time",
+"code": "",
+"id": 3073665,
+"tasks": [{"name": "Other", "billable": false, "id": 1819358}, {"name": "Writing", "billable": false, "id": 1658745}],
+"client": "Sparkbox Apprentice",
+"client_id": 1446704,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "APP: Pairing",
+"code": "",
+"id": 3073697,
+"tasks": [{"name": "Design", "billable": false, "id": 1629019}, {"name": "Development", "billable": false, "id": 1629017}, {"name": "Planning", "billable": false, "id": 1629014}, {"name": "Project Management", "billable": false, "id": 1628998}, {"name": "Templates", "billable": false, "id": 1629016}, {"name": "Wireframes", "billable": false, "id": 1629015}],
+"client": "Sparkbox Apprentice",
+"client_id": 1446704,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+,
+{
+"name": "APP: Threeve",
+"code": "",
+"id": 3074791,
+"tasks": [{"name": "Design", "billable": false, "id": 1629019}, {"name": "Development", "billable": false, "id": 1629017}, {"name": "Planning", "billable": false, "id": 1629014}, {"name": "Project Management", "billable": false, "id": 1628998}, {"name": "Templates", "billable": false, "id": 1629016}, {"name": "Wireframes", "billable": false, "id": 1629015}],
+"client": "Sparkbox Apprentice",
+"client_id": 1446704,
+"client_currency": "United States Dollars - USD",
+"client_currency_symbol": "$"}
+],
+   "for_day": "2013-09-05"}
