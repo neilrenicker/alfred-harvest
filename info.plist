@@ -47,11 +47,41 @@
 				<string>Delete this entry...</string>
 			</dict>
 		</array>
+		<key>7C769085-368E-434E-A685-A9217515874D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>648E677F-5B10-45F2-9595-606FBF4C43CD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>60CFCBE9-3D2A-4EFE-8138-8CA75A00801C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>A87D86DC-4941-4857-8BEC-A49BD68AFC93</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>BBF74D0F-36D2-484B-8AC8-B61B1DC1EC64</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>B93A4B5E-096F-47BE-A58C-E1EE475CFFA9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7C769085-368E-434E-A685-A9217515874D</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -83,6 +113,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>php -f toggle.php "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>A87D86DC-4941-4857-8BEC-A49BD68AFC93</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -106,23 +153,6 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>4A67BAC3-0B1F-4588-A927-C99D01112342</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>php -f toggle.php "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>A87D86DC-4941-4857-8BEC-A49BD68AFC93</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -194,6 +224,23 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>php -f new_post.php "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3943AAE3-B117-4A2B-99DC-491B1C94C8A2</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
@@ -223,23 +270,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string>php -f new_post.php "{query}"</string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>3943AAE3-B117-4A2B-99DC-491B1C94C8A2</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -259,6 +289,127 @@
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
 			<string>19D06122-202C-4DBA-80DF-6923A5FDA091</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>keyword</key>
+				<string>hvset</string>
+				<key>script</key>
+				<string>require('workflows.php');
+$w = new Workflows();
+
+$in = "{query}";
+
+$step1 = ( file_exists( 'step1.txt' ) ) ? file_get_contents( 'step1.txt' ) : false;
+$step2 = ( file_exists( 'step2.txt' ) ) ? file_get_contents( 'step2.txt' ) : false;
+$step3 = ( file_exists( 'step3.txt' ) ) ? file_get_contents( 'step3.txt' ) : false;
+
+if ( !$step1 ): // no data saved for step 1
+	$w-&gt;result( 'demo', $in, 'First name: '.$in, 'Enter your first name', 'icon.png', 'yes' );
+elseif ( !$step2 ): // no data saved for step 2
+	$w-&gt;result( 'demo', $in, 'Last name: '.$in, 'Enter your last name', 'icon.png', 'yes' );
+elseif ( !$step3 ): // no data saved for step 3
+	$w-&gt;result( 'demo', $in, 'Title: '.$in, 'Enter your title', 'icon.png', 'yes' );
+endif;
+
+echo $w-&gt;toxml();</string>
+				<key>subtext</key>
+				<string>This is the subtext</string>
+				<key>title</key>
+				<string>Set Harvest credentials</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>B93A4B5E-096F-47BE-A58C-E1EE475CFFA9</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>require('workflows.php');
+$w = new Workflows();
+
+$in = trim( "{query}" );
+
+$step1 = ( file_exists( 'step1.txt' ) ) ? file_get_contents( 'step1.txt' ) : false;
+$step2 = ( file_exists( 'step2.txt' ) ) ? file_get_contents( 'step2.txt' ) : false;
+$step3 = ( file_exists( 'step2.txt' ) ) ? $in : false;
+
+if ( !$step1 ):
+	file_put_contents( 'step1.txt', $in );
+elseif ( !$step2 ):
+	file_put_contents( 'step2.txt', $in );
+elseif ( $step3 ):
+	unlink( 'step1.txt' );
+	unlink( 'step2.txt' );
+	echo "$step1 $step2 $step3";
+endif;</string>
+				<key>type</key>
+				<integer>1</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7C769085-368E-434E-A685-A9217515874D</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>title</key>
+				<string>Harvest credentials set!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>648E677F-5B10-45F2-9595-606FBF4C43CD</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>set temp to "{query}"
+if temp is "" then
+	tell application "Alfred 2" to search "hvset "
+end if</string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>60CFCBE9-3D2A-4EFE-8138-8CA75A00801C</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -287,10 +438,30 @@
 			<key>ypos</key>
 			<real>50</real>
 		</dict>
+		<key>60CFCBE9-3D2A-4EFE-8138-8CA75A00801C</key>
+		<dict>
+			<key>ypos</key>
+			<real>560</real>
+		</dict>
+		<key>648E677F-5B10-45F2-9595-606FBF4C43CD</key>
+		<dict>
+			<key>ypos</key>
+			<real>440</real>
+		</dict>
+		<key>7C769085-368E-434E-A685-A9217515874D</key>
+		<dict>
+			<key>ypos</key>
+			<real>440</real>
+		</dict>
 		<key>A87D86DC-4941-4857-8BEC-A49BD68AFC93</key>
 		<dict>
 			<key>ypos</key>
 			<real>50</real>
+		</dict>
+		<key>B93A4B5E-096F-47BE-A58C-E1EE475CFFA9</key>
+		<dict>
+			<key>ypos</key>
+			<real>440</real>
 		</dict>
 		<key>B9AD2746-03ED-4B02-BEC5-0D492B3C4375</key>
 		<dict>
