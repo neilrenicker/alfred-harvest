@@ -5,6 +5,10 @@ Let [Alfred][2] help you track your time. This workflow gives you complete acces
 * view today's timesheet
 * start / stop a timer
 
+Download it: [Harvest.alfredworkflow](https://github.com/neilrenicker/alfred-harvest/blob/master/Harvest.alfredworkflow?raw=true)
+
+**Note:** Still work in progress. Don't share the workflow from within Alfred—unless you delete the `projects.txt` and `id.txt` within the workflow folder, you'll be sharing your projects and Harvest password with your friends.
+
 ## How to use:
 
 * Type `hset` to enter your Harvest subdomain, email, and password. **Note:** THIS_PART_IS_YOUR_SUBDOMAIN.harvestapp.com
