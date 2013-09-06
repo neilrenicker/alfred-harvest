@@ -3,7 +3,7 @@
   $query = trim($argv[1]);
   
   require('auth.php');
-  $url = "https://$shortname.harvestapp.com/daily/add";
+  $url = "https://$subdomain.harvestapp.com/daily/add";
 
   // get id's from $query:
   $strings = explode( "|", $query);

@@ -3,7 +3,7 @@
   $query = trim($argv[1]);
 
   require('auth.php');
-  $url = "https://$shortname.harvestapp.com/daily/timer/$query";
+  $url = "https://$subdomain.harvestapp.com/daily/timer/$query";
 
   $headers = array (
     "Content-type: application/json",

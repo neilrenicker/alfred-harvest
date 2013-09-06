@@ -1,7 +1,7 @@
 <?php
 
   require('auth.php');
-  $url = "https://$shortname.harvestapp.com/daily";
+  $url = "https://$subdomain.harvestapp.com/daily";
 
   $headers = array (
     "Content-type: application/json",

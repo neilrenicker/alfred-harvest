@@ -5,7 +5,7 @@
   fclose($fp);
 
   $strings = explode( "\n", $data);
-  $shortname = $strings[0];
+  $subdomain = $strings[0];
   $email = $strings[1];
   $password = $strings[2];
   $credentials = $email . ":" . $password;

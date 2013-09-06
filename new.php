@@ -3,7 +3,7 @@
   $query = trim($argv[1]);
 
   require('auth.php');
-  $url = "https://$shortname.harvestapp.com/daily";
+  $url = "https://$subdomain.harvestapp.com/daily";
 
   if ( substr_count( $query, '→' ) == 0 ):
 

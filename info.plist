@@ -311,8 +311,8 @@ $step3 = ( file_exists( 'step3.txt' ) ) ? file_get_contents( 'step3.txt' ) : fal
 if ( !$step1 ):
   $xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
   $xml .= "&lt;item arg=\"$in\"&gt;\n";
-  $xml .= "&lt;title&gt;Short URL: $in&lt;/title&gt;\n";
-  $xml .= "&lt;subtitle&gt;THIS_PART_IS_YOUR_SHORT_URL.harvestapp.com&lt;/subtitle&gt;\n";
+  $xml .= "&lt;title&gt;Subdomain: $in&lt;/title&gt;\n";
+  $xml .= "&lt;subtitle&gt;THIS_PART.harvestapp.com&lt;/subtitle&gt;\n";
   $xml .= "&lt;icon&gt;icon.png&lt;/icon&gt;\n";
   $xml .= "&lt;/item&gt;\n";
   $xml .= "&lt;/items&gt;";
