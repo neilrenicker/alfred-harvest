@@ -302,26 +302,39 @@
 				<key>keyword</key>
 				<string>hvset</string>
 				<key>script</key>
-				<string>require('workflows.php');
-$w = new Workflows();
-
-$in = "{query}";
+				<string>$in = "{query}";
 
 $step1 = ( file_exists( 'step1.txt' ) ) ? file_get_contents( 'step1.txt' ) : false;
 $step2 = ( file_exists( 'step2.txt' ) ) ? file_get_contents( 'step2.txt' ) : false;
 $step3 = ( file_exists( 'step3.txt' ) ) ? file_get_contents( 'step3.txt' ) : false;
 
-if ( !$step1 ): // no data saved for step 1
-	$w-&gt;result( 'demo', $in, 'First name: '.$in, 'Enter your first name', 'icon.png', 'yes' );
-elseif ( !$step2 ): // no data saved for step 2
-	$w-&gt;result( 'demo', $in, 'Last name: '.$in, 'Enter your last name', 'icon.png', 'yes' );
-elseif ( !$step3 ): // no data saved for step 3
-	$w-&gt;result( 'demo', $in, 'Title: '.$in, 'Enter your title', 'icon.png', 'yes' );
+if ( !$step1 ):
+  $xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
+  $xml .= "&lt;item arg=\"$in\"&gt;\n";
+  $xml .= "&lt;title&gt;Short URL: . $in&lt;/title&gt;\n";
+  $xml .= "&lt;subtitle&gt;THIS_PART_IS_YOUR_SHORT_URL.harvestapp.com&lt;/subtitle&gt;\n";
+  $xml .= "&lt;icon&gt;icon.png&lt;/icon&gt;\n";
+  $xml .= "&lt;/item&gt;\n";
+  $xml .= "&lt;/items&gt;";
+elseif ( !$step2 ):
+  $xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
+  $xml .= "&lt;item arg=\"$in\"&gt;\n";
+  $xml .= "&lt;title&gt;Email: . $in&lt;/title&gt;\n";
+  $xml .= "&lt;subtitle&gt;Enter your Harvest login email&lt;/subtitle&gt;\n";
+  $xml .= "&lt;icon&gt;icon.png&lt;/icon&gt;\n";
+  $xml .= "&lt;/item&gt;\n";
+  $xml .= "&lt;/items&gt;";
+elseif ( !$step3 ):
+  $$xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
+  $xml .= "&lt;item arg=\"$in\"&gt;\n";
+  $xml .= "&lt;title&gt;Password . $in&lt;/title&gt;\n";
+  $xml .= "&lt;subtitle&gt;Enter your Harvest password&lt;/subtitle&gt;\n";
+  $xml .= "&lt;icon&gt;icon.png&lt;/icon&gt;\n";
+  $xml .= "&lt;/item&gt;\n";
+  $xml .= "&lt;/items&gt;";
 endif;
 
 echo $w-&gt;toxml();</string>
-				<key>subtext</key>
-				<string>This is the subtext</string>
 				<key>title</key>
 				<string>Set Harvest credentials</string>
 				<key>type</key>
@@ -342,23 +355,20 @@ echo $w-&gt;toxml();</string>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>require('workflows.php');
-$w = new Workflows();
-
-$in = trim( "{query}" );
+				<string>$in = trim( "{query}" );
 
 $step1 = ( file_exists( 'step1.txt' ) ) ? file_get_contents( 'step1.txt' ) : false;
 $step2 = ( file_exists( 'step2.txt' ) ) ? file_get_contents( 'step2.txt' ) : false;
 $step3 = ( file_exists( 'step2.txt' ) ) ? $in : false;
 
 if ( !$step1 ):
-	file_put_contents( 'step1.txt', $in );
+  file_put_contents( 'step1.txt', $in );
 elseif ( !$step2 ):
-	file_put_contents( 'step2.txt', $in );
+  file_put_contents( 'step2.txt', $in );
 elseif ( $step3 ):
-	unlink( 'step1.txt' );
-	unlink( 'step2.txt' );
-	echo "$step1 $step2 $step3";
+  unlink( 'step1.txt' );
+  unlink( 'step2.txt' );
+  echo "$step1 $step2 $step3";
 endif;</string>
 				<key>type</key>
 				<integer>1</integer>
@@ -383,6 +393,8 @@ endif;</string>
 				<false/>
 				<key>sticky</key>
 				<false/>
+				<key>text</key>
+				<string>{query}</string>
 				<key>title</key>
 				<string>Harvest credentials set!</string>
 			</dict>
