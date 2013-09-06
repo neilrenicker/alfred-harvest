@@ -1,12 +1,9 @@
 <?php
 
-  $id          = trim($argv[1]);
+  $query = trim($argv[1]);
 
-  $shortname   = "YOUR_SHORTNAME";
-  $email       = "YOUR_EMAIL";
-  $password    = "YOUR_PASSWORD";
-  $credentials = $email . ":" . $password;
-  $toggle_url = "https://$shortname.harvestapp.com/daily/timer/$id";
+  require('auth.php');
+  $url = "https://$shortname.harvestapp.com/daily/timer/$query";
 
   $headers = array (
     "Content-type: application/json",
@@ -15,7 +12,7 @@
   );
 
   $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $toggle_url);
+  curl_setopt($ch, CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_VERBOSE, 0);
   curl_setopt($ch, CURLOPT_TIMEOUT, 60);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);

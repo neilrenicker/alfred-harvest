@@ -1,12 +1,9 @@
 <?php
 
-  $id          = trim($argv[1]);
-  $shortname   = "YOUR_SHORTNAME";
-  $email       = "YOUR_EMAIL";
-  $password    = "YOUR_PASSWORD";
+  $query = trim($argv[1]);
 
-  $credentials = $email . ":" . $password;
-  $delete_url = "https://$shortname.harvestapp.com/daily/delete/$id";
+  require('auth.php');
+  $url = "https://$shortname.harvestapp.com/daily/delete/$query";
 
   $headers = array (
     "Content-type: application/json",
@@ -15,7 +12,7 @@
   );
 
   $ch = curl_init();
-  curl_setopt($ch, CURLOPT_URL, $delete_url);
+  curl_setopt($ch, CURLOPT_URL, $url);
   curl_setopt($ch, CURLOPT_VERBOSE, 0);
   curl_setopt($ch, CURLOPT_TIMEOUT, 60);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);

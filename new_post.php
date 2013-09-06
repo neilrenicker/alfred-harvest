@@ -2,14 +2,11 @@
 
   $query = trim($argv[1]);
   
-  $shortname   = "YOUR_SHORTNAME";
-  $email       = "YOUR_EMAIL";
-  $password    = "YOUR_PASSWORD";
-  $credentials = $email . ":" . $password;
-  $url   = "https://$shortname.harvestapp.com/daily/add";
+  require('auth.php');
+  $url = "https://$shortname.harvestapp.com/daily/add";
 
   // get id's from $query:
-  $strings = explode( "|" , $query);
+  $strings = explode( "|", $query);
   $project_id = $strings[0];
   $task_id = $strings[1];
   $project = str_replace("_", " ", $strings[2]);

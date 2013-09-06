@@ -1,13 +1,9 @@
 <?php
 
-  $shortname   = "YOUR_SHORTNAME";
-  $email       = "YOUR_EMAIL";
-  $password    = "YOUR_PASSWORD";
-
-  $credentials = $email . ":" . $password;
-  $get_daily   = "https://$shortname.harvestapp.com/daily";
-
   $query = trim($argv[1]);
+
+  require('auth.php');
+  $url = "https://$shortname.harvestapp.com/daily";
 
   if ( substr_count( $query, '→' ) == 0 ):
 
@@ -18,7 +14,7 @@
     );
 
     $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $get_daily);
+    curl_setopt($ch, CURLOPT_URL, $url);
     curl_setopt($ch, CURLOPT_VERBOSE, 0);
     curl_setopt($ch, CURLOPT_TIMEOUT, 60);
     curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);

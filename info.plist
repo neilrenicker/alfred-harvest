@@ -368,7 +368,7 @@ elseif ( !$step2 ):
 elseif ( $step3 ):
   unlink( 'step1.txt' );
   unlink( 'step2.txt' );
-  $id = "$step1|$step2|$step3";
+  $id = "$step1\n$step2\n$step3";
   file_put_contents( 'id.txt', $id );
   echo "$id";
 endif;</string>
@@ -396,7 +396,7 @@ endif;</string>
 				<key>sticky</key>
 				<false/>
 				<key>text</key>
-				<string>The Harvest workflow is ready to use.</string>
+				<string>The workflow is ready to use.</string>
 				<key>title</key>
 				<string>Harvest credentials set!</string>
 			</dict>
