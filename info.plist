@@ -298,9 +298,9 @@
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
-				<integer>126</integer>
+				<integer>62</integer>
 				<key>keyword</key>
-				<string>hvset</string>
+				<string>harset</string>
 				<key>script</key>
 				<string>$in = "{query}";
 
@@ -311,7 +311,7 @@ $step3 = ( file_exists( 'step3.txt' ) ) ? file_get_contents( 'step3.txt' ) : fal
 if ( !$step1 ):
   $xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
   $xml .= "&lt;item arg=\"$in\"&gt;\n";
-  $xml .= "&lt;title&gt;Short URL: . $in&lt;/title&gt;\n";
+  $xml .= "&lt;title&gt;Short URL: $in&lt;/title&gt;\n";
   $xml .= "&lt;subtitle&gt;THIS_PART_IS_YOUR_SHORT_URL.harvestapp.com&lt;/subtitle&gt;\n";
   $xml .= "&lt;icon&gt;icon.png&lt;/icon&gt;\n";
   $xml .= "&lt;/item&gt;\n";
@@ -319,22 +319,22 @@ if ( !$step1 ):
 elseif ( !$step2 ):
   $xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
   $xml .= "&lt;item arg=\"$in\"&gt;\n";
-  $xml .= "&lt;title&gt;Email: . $in&lt;/title&gt;\n";
+  $xml .= "&lt;title&gt;Email: $in&lt;/title&gt;\n";
   $xml .= "&lt;subtitle&gt;Enter your Harvest login email&lt;/subtitle&gt;\n";
   $xml .= "&lt;icon&gt;icon.png&lt;/icon&gt;\n";
   $xml .= "&lt;/item&gt;\n";
   $xml .= "&lt;/items&gt;";
 elseif ( !$step3 ):
-  $$xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
+  $xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
   $xml .= "&lt;item arg=\"$in\"&gt;\n";
-  $xml .= "&lt;title&gt;Password . $in&lt;/title&gt;\n";
+  $xml .= "&lt;title&gt;Password: $in&lt;/title&gt;\n";
   $xml .= "&lt;subtitle&gt;Enter your Harvest password&lt;/subtitle&gt;\n";
   $xml .= "&lt;icon&gt;icon.png&lt;/icon&gt;\n";
   $xml .= "&lt;/item&gt;\n";
   $xml .= "&lt;/items&gt;";
 endif;
 
-echo $w-&gt;toxml();</string>
+echo $xml;</string>
 				<key>title</key>
 				<string>Set Harvest credentials</string>
 				<key>type</key>
@@ -353,7 +353,7 @@ echo $w-&gt;toxml();</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>62</integer>
 				<key>script</key>
 				<string>$in = trim( "{query}" );
 
@@ -368,7 +368,9 @@ elseif ( !$step2 ):
 elseif ( $step3 ):
   unlink( 'step1.txt' );
   unlink( 'step2.txt' );
-  echo "$step1 $step2 $step3";
+  $id = "$step1|$step2|$step3";
+  file_put_contents( 'id.txt', $id );
+  echo "$id";
 endif;</string>
 				<key>type</key>
 				<integer>1</integer>
@@ -386,7 +388,7 @@ endif;</string>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<false/>
+				<true/>
 				<key>output</key>
 				<integer>0</integer>
 				<key>removeextension</key>
@@ -394,7 +396,7 @@ endif;</string>
 				<key>sticky</key>
 				<false/>
 				<key>text</key>
-				<string>{query}</string>
+				<string>The Harvest workflow is ready to use.</string>
 				<key>title</key>
 				<string>Harvest credentials set!</string>
 			</dict>
@@ -413,7 +415,7 @@ endif;</string>
 				<key>script</key>
 				<string>set temp to "{query}"
 if temp is "" then
-	tell application "Alfred 2" to search "hvset "
+	tell application "Alfred 2" to search "harset "
 end if</string>
 				<key>type</key>
 				<integer>6</integer>
