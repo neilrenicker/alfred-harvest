@@ -296,11 +296,11 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>0</integer>
+				<integer>1</integer>
 				<key>escaping</key>
 				<integer>62</integer>
 				<key>keyword</key>
-				<string>harset</string>
+				<string>hset</string>
 				<key>script</key>
 				<string>$in = "{query}";
 
@@ -415,7 +415,7 @@ endif;</string>
 				<key>script</key>
 				<string>set temp to "{query}"
 if temp is "" then
-	tell application "Alfred 2" to search "harset "
+	tell application "Alfred 2" to search "hset "
 end if</string>
 				<key>type</key>
 				<integer>6</integer>
