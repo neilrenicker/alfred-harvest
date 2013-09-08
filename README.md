@@ -20,6 +20,7 @@ Download it: [Harvest.alfredworkflow](https://github.com/neilrenicker/alfred-har
 ## Features coming soon:
 *In order of development, I think*
 
+* More secure password / email handling
 * Fuzzy searching on timers
 * Command to quickly add/subtract 5min, 10min, or custom amount from any timer (for those times when you step out for a pool game and forget to shut off your timer).
 * Command to start a new timer with time already tracked to it (for those times when you're an hour into a project when you remember to start the timer).
