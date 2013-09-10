@@ -5,7 +5,7 @@ Let [Alfred][2] help you track your time. This workflow gives you complete acces
 * view today's timesheet
 * start / stop a timer
 
-[View releases and download](/releases)
+[View releases and download](https://github.com/neilrenicker/alfred-harvest/releases)
 
 **Note:** Still work in progress. Don't share the workflow from within Alfred—unless you delete the `projects.txt` and `id.txt` within the workflow folder, you'll be sharing your projects and Harvest password with your friends.
 
