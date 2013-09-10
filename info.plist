@@ -139,7 +139,7 @@
 				<key>runningsubtext</key>
 				<string>Generating your timesheet...</string>
 				<key>script</key>
-				<string>php -f harvest.php</string>
+				<string>php -f harvest.php "{query}"</string>
 				<key>subtext</key>
 				<string>Choose the project you want to start...</string>
 				<key>title</key>
