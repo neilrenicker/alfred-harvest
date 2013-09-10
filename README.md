@@ -21,8 +21,8 @@ Let [Alfred][2] help you track your time. This workflow gives you complete acces
 *In order of development, I think*
 
 * More secure password / email handling
-* <strike>Search filtering for on timers and toggling</strike>
-* <strike>Speed up the workflow: cache projects, only making a request for daily timers</strike>
+* ~~Search filtering for on timers and toggling~~
+* ~~Speed up the workflow: cache projects, only making a request for daily timers~~
 * Command to quickly add/subtract 5min, 10min, or custom amount from any timer (for those times when you step out for a pool game and forget to shut off your timer).
 * Command to start a new timer with time already tracked to it (for those times when you're an hour into a project when you remember to start the timer).
 

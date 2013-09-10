@@ -430,7 +430,24 @@ end if</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string></string>
+	<string>## Harvest workflow for Alfred
+
+Let Alfred help you track your time. This workflow gives you complete access to your Harvest time-tracking:
+
+* view today's timesheet
+* start / stop a timer
+
+View releases and download the latest: https://github.com/neilrenicker/alfred-harvest/releases
+
+**Note:** Still work in progress. Don't share the workflow from within Alfred—unless you delete the `projects.txt` and `id.txt` within the workflow folder, you'll be sharing your projects and Harvest password with your friends.
+
+## How to use:
+
+* Type `hset` to enter your Harvest subdomain, email, and password. **Note:** THIS_PART_IS_YOUR_SUBDOMAIN.harvestapp.com
+* Type `hv` to generate a list of your current projects
+* Press `enter` on the current timer to toggle tracking on it
+* Press `enter` on any other project to view available tasks, then press `enter` to begin tracking time on it
+* Hold `option` on any of today's active projects to delete today's time on that project</string>
 	<key>uidata</key>
 	<dict>
 		<key>0D8D08EF-2F39-456A-AE56-29F019C948B4</key>
