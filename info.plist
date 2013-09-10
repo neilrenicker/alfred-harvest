@@ -340,7 +340,7 @@ echo $xml;</string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
@@ -371,6 +371,7 @@ elseif ( $step3 ):
   $id = "$step1\n$step2\n$step3";
   file_put_contents( 'id.txt', $id );
   echo "$id";
+  $setCache = system('php getdaily.php');
 endif;</string>
 				<key>type</key>
 				<integer>1</integer>
