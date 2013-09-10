@@ -33,7 +33,9 @@
 
   elseif ( substr_count( $query, '→' ) == 1 ):
 
-    $project_name = trim( $query, " → " );
+    $strings = explode( " →", $query);
+    $project_name = $strings[0];
+    $newQuery = $strings[1];
     $data_raw = file_get_contents('projects.txt');
     $data = json_decode($data_raw, true);
 
@@ -53,11 +55,19 @@
       $task_name = htmlspecialchars($task["name"]);
       $task_id = $task["id"];
 
-      $xml .= "<item arg=\"$project_id|$task_id|$project_name_encoded\">\n";
-      $xml .= "<title>$task_name</title>\n";
-      $xml .= "<subtitle>Start this task</subtitle>\n";
-      $xml .= "<icon>go.png</icon>\n";
-      $xml .= "</item>\n";
+      if ( !$newQuery ) {
+        $xml .= "<item arg=\"$project_id|$task_id|$project_name_encoded\">\n";
+        $xml .= "<title>$task_name</title>\n";
+        $xml .= "<subtitle>Start this task</subtitle>\n";
+        $xml .= "<icon>go.png</icon>\n";
+        $xml .= "</item>\n";
+      } elseif ( stripos(" " . $task_name, $newQuery) !== false ) {
+        $xml .= "<item arg=\"$project_id|$task_id|$project_name_encoded\">\n";
+        $xml .= "<title>$task_name</title>\n";
+        $xml .= "<subtitle>Start this task</subtitle>\n";
+        $xml .= "<icon>go.png</icon>\n";
+        $xml .= "</item>\n";
+      }
     }
 
     $xml .= "</items>";
