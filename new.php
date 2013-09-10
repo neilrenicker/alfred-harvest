@@ -13,11 +13,19 @@
       $name    = htmlspecialchars($project["name"]);
       $client  = htmlspecialchars($project["client"]);
 
-      $xml .= "<item valid=\"no\" autocomplete=\" $name → \">\n";
-      $xml .= "<title>$name, $client</title>\n";
-      $xml .= "<subtitle>View available tasks...</subtitle>\n";
-      $xml .= "<icon>add.png</icon>\n";
-      $xml .= "</item>\n";
+      if ( !$query ) {
+        $xml .= "<item valid=\"no\" autocomplete=\" $name → \">\n";
+        $xml .= "<title>$name, $client</title>\n";
+        $xml .= "<subtitle>View available tasks...</subtitle>\n";
+        $xml .= "<icon>add.png</icon>\n";
+        $xml .= "</item>\n";
+      } elseif ( stripos($name . $client, $query) !== false ) {
+        $xml .= "<item valid=\"no\" autocomplete=\" $name → \">\n";
+        $xml .= "<title>$name, $client</title>\n";
+        $xml .= "<subtitle>View available tasks...</subtitle>\n";
+        $xml .= "<icon>add.png</icon>\n";
+        $xml .= "</item>\n";
+      }
     }
 
     $xml .= "</items>";
