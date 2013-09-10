@@ -1,5 +1,7 @@
 <?php
 
+  $query = trim($argv[1]);
+
   require('auth.php');
   $url = "https://$subdomain.harvestapp.com/daily";
 
@@ -15,7 +17,7 @@
   curl_setopt($ch, CURLOPT_TIMEOUT, 60);
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-  $data_raw = curl_exec($ch);
+  $response = curl_exec($ch);
 
   if (curl_errno($ch)) {
     print "Error: " . curl_error($ch);
@@ -23,7 +25,11 @@
     curl_close($ch);
   }
 
-  $data = json_decode($data_raw, true);
+  $fp = fopen('projects.txt', 'w');
+  fwrite($fp, $response);
+  fclose($fp);
+
+  $data = json_decode($response, true);
   $xml = "<?xml version=\"1.0\"?>\n<items>\n";
 
   foreach ($data["day_entries"] as $day_entry){
@@ -35,7 +41,7 @@
     $id      = $day_entry["id"];
 
     if ( $active ) {
-      $xml .= "<item uid=\"harvestcurrent\" arg=\"$id\">\n";
+      $xml .= "<item uid=\"harvestcurrent-$id\" arg=\"$id\">\n";
     } else {
       $xml .= "<item arg=\"$id\">\n";
     }

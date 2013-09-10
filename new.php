@@ -2,31 +2,10 @@
 
   $query = trim($argv[1]);
 
-  require('auth.php');
-  $url = "https://$subdomain.harvestapp.com/daily";
-
   if ( substr_count( $query, '→' ) == 0 ):
 
-    $headers = array (
-      "Content-type: application/json",
-      "Accept: application/json",
-      "Authorization: Basic " . base64_encode($credentials)
-    );
-
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_VERBOSE, 0);
-    curl_setopt($ch, CURLOPT_TIMEOUT, 60);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    $response = curl_exec($ch);
-    curl_close($ch);
-
-    $fp = fopen('projects.txt', 'w');
-    fwrite($fp, $response);
-    fclose($fp);
-
-    $data = json_decode($response, true);
+    $data_raw = file_get_contents('projects.txt');
+    $data = json_decode($data_raw, true);
 
     $xml = "<?xml version=\"1.0\"?>\n<items>\n";
 
