@@ -133,7 +133,7 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>4</integer>
+				<integer>0</integer>
 				<key>keyword</key>
 				<string>hv</string>
 				<key>runningsubtext</key>
@@ -244,7 +244,7 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>126</integer>
+				<integer>0</integer>
 				<key>keyword</key>
 				<string>hv</string>
 				<key>runningsubtext</key>
@@ -298,7 +298,7 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
-				<integer>62</integer>
+				<integer>0</integer>
 				<key>keyword</key>
 				<string>hset</string>
 				<key>script</key>
