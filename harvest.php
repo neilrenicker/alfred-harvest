@@ -1,6 +1,7 @@
 <?php
 
   $query = trim($argv[1]);
+  $dir = "../../../Workflow Data/com.neilrenicker.harvest/";
 
   if ( !$query ) {
 
@@ -40,7 +41,7 @@
 
   } else {
 
-    $data_raw = file_get_contents('projects.txt');
+    $data_raw = file_get_contents($dir . 'projects.json');
     $data = json_decode($data_raw, true);
 
     $xml = "<?xml version=\"1.0\"?>\n<items>\n";

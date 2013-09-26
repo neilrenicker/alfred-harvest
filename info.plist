@@ -303,10 +303,15 @@
 				<string>hset</string>
 				<key>script</key>
 				<string>$in = "{query}";
+$dir = "../../../Workflow Data/com.neilrenicker.harvest/";
 
-$step1 = ( file_exists( 'step1.txt' ) ) ? file_get_contents( 'step1.txt' ) : false;
-$step2 = ( file_exists( 'step2.txt' ) ) ? file_get_contents( 'step2.txt' ) : false;
-$step3 = ( file_exists( 'step3.txt' ) ) ? file_get_contents( 'step3.txt' ) : false;
+if (!is_dir($dir)) {
+  mkdir($dir);         
+}
+
+$step1 = ( file_exists( $dir . 'step1.txt' ) ) ? file_get_contents( $dir . 'step1.txt' ) : false;
+$step2 = ( file_exists( $dir . 'step2.txt' ) ) ? file_get_contents( $dir . 'step2.txt' ) : false;
+$step3 = ( file_exists( $dir . 'step3.txt' ) ) ? file_get_contents( $dir . 'step3.txt' ) : false;
 
 if ( !$step1 ):
   $xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
@@ -356,20 +361,22 @@ echo $xml;</string>
 				<integer>62</integer>
 				<key>script</key>
 				<string>$in = trim( "{query}" );
+$dir = "../../../Workflow Data/com.neilrenicker.harvest/";
 
-$step1 = ( file_exists( 'step1.txt' ) ) ? file_get_contents( 'step1.txt' ) : false;
-$step2 = ( file_exists( 'step2.txt' ) ) ? file_get_contents( 'step2.txt' ) : false;
-$step3 = ( file_exists( 'step2.txt' ) ) ? $in : false;
+
+$step1 = ( file_exists( $dir . 'step1.txt' ) ) ? file_get_contents( $dir . 'step1.txt' ) : false;
+$step2 = ( file_exists( $dir . 'step2.txt' ) ) ? file_get_contents( $dir . 'step2.txt' ) : false;
+$step3 = ( file_exists( $dir . 'step2.txt' ) ) ? $in : false;
 
 if ( !$step1 ):
-  file_put_contents( 'step1.txt', $in );
+  file_put_contents( $dir . 'step1.txt', $in );
 elseif ( !$step2 ):
-  file_put_contents( 'step2.txt', $in );
+  file_put_contents( $dir . 'step2.txt', $in );
 elseif ( $step3 ):
-  unlink( 'step1.txt' );
-  unlink( 'step2.txt' );
+  unlink( $dir . 'step1.txt' );
+  unlink( $dir . 'step2.txt' );
   $id = "$step1\n$step2\n$step3";
-  file_put_contents( 'id.txt', $id );
+  file_put_contents( $dir . 'id.txt', $id );
   echo "$id";
   $setCache = system('php getdaily.php');
 endif;</string>

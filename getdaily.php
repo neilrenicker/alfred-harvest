@@ -1,6 +1,7 @@
 <?php
   require('auth.php');
   $url = "https://$subdomain.harvestapp.com/daily";
+  $dir = "../../../Workflow Data/com.neilrenicker.harvest/";
 
   $headers = array (
     "Content-type: application/json",
@@ -22,7 +23,7 @@
     curl_close($ch);
   }
 
-  $fp = fopen('projects.txt', 'w');
+  $fp = fopen($dir . 'projects.json', 'w');
   fwrite($fp, $response);
   fclose($fp);
 ?>

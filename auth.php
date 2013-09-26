@@ -1,6 +1,7 @@
 <?php
 
-  $fp = fopen("id.txt", "r");
+  $dir = "../../../Workflow Data/com.neilrenicker.harvest/";
+  $fp = fopen($dir . "id.txt", "r");
   $data = stream_get_contents($fp);
   fclose($fp);
 
