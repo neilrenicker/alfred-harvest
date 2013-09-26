@@ -8,6 +8,7 @@ Let [Alfred][2] help you track your time. This workflow gives you complete acces
 [View releases and download](https://github.com/neilrenicker/alfred-harvest/releases)
 
 **Status:** In development; but currently supports view projects, toggling timers, and deleting timers
+
 **Please note:** Passwords and project caching are stored in Alfred's "Workflow Data" folder. This means your Harvest login info isn't encrypted, although it is tucked away in a deep dark system folder. I'll be updating this soon.
 
 ## How to use:
