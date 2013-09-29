@@ -47,6 +47,17 @@
 				<string>Delete this entry...</string>
 			</dict>
 		</array>
+		<key>63B527C1-66CE-447A-8F7C-A007A9BC2ABA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>1787F485-A642-494C-9371-DC70819172C4</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>7C769085-368E-434E-A685-A9217515874D</key>
 		<array>
 			<dict>
@@ -298,6 +309,60 @@
 				<key>argumenttype</key>
 				<integer>1</integer>
 				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>hv</string>
+				<key>script</key>
+				<string>require('auth.php');
+$url = "https://$subdomain.harvestapp.com";
+
+$xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
+$xml .= "&lt;item uid=\"harvestaccount\" arg=\"$url\"&gt;\n";
+$xml .= "&lt;title&gt;Launch Harvest account...&lt;/title&gt;\n";
+$xml .= "&lt;subtitle&gt;Open $url&lt;/subtitle&gt;\n";
+$xml .= "&lt;icon&gt;icon.png&lt;/icon&gt;\n";
+$xml .= "&lt;/item&gt;\n";
+$xml .= "&lt;/items&gt;";
+echo $xml;</string>
+				<key>subtext</key>
+				<string>Launch Harvest account in a browser</string>
+				<key>title</key>
+				<string>Launch Harvest account</string>
+				<key>type</key>
+				<integer>1</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>63B527C1-66CE-447A-8F7C-A007A9BC2ABA</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>open {query}</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.script</string>
+			<key>uid</key>
+			<string>1787F485-A642-494C-9371-DC70819172C4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
 				<integer>0</integer>
 				<key>keyword</key>
 				<string>hset</string>
@@ -462,6 +527,11 @@ View releases and download the latest: https://github.com/neilrenicker/alfred-ha
 			<key>ypos</key>
 			<real>160</real>
 		</dict>
+		<key>1787F485-A642-494C-9371-DC70819172C4</key>
+		<dict>
+			<key>ypos</key>
+			<real>440</real>
+		</dict>
 		<key>19D06122-202C-4DBA-80DF-6923A5FDA091</key>
 		<dict>
 			<key>ypos</key>
@@ -480,17 +550,22 @@ View releases and download the latest: https://github.com/neilrenicker/alfred-ha
 		<key>60CFCBE9-3D2A-4EFE-8138-8CA75A00801C</key>
 		<dict>
 			<key>ypos</key>
-			<real>560</real>
+			<real>710</real>
+		</dict>
+		<key>63B527C1-66CE-447A-8F7C-A007A9BC2ABA</key>
+		<dict>
+			<key>ypos</key>
+			<real>440</real>
 		</dict>
 		<key>648E677F-5B10-45F2-9595-606FBF4C43CD</key>
 		<dict>
 			<key>ypos</key>
-			<real>440</real>
+			<real>590</real>
 		</dict>
 		<key>7C769085-368E-434E-A685-A9217515874D</key>
 		<dict>
 			<key>ypos</key>
-			<real>440</real>
+			<real>590</real>
 		</dict>
 		<key>A87D86DC-4941-4857-8BEC-A49BD68AFC93</key>
 		<dict>
@@ -500,7 +575,7 @@ View releases and download the latest: https://github.com/neilrenicker/alfred-ha
 		<key>B93A4B5E-096F-47BE-A58C-E1EE475CFFA9</key>
 		<dict>
 			<key>ypos</key>
-			<real>440</real>
+			<real>590</real>
 		</dict>
 		<key>B9AD2746-03ED-4B02-BEC5-0D492B3C4375</key>
 		<dict>
