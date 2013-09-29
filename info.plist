@@ -311,7 +311,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
-				<string>hv</string>
+				<string>ha</string>
 				<key>script</key>
 				<string>require('auth.php');
 $url = "https://$subdomain.harvestapp.com";
