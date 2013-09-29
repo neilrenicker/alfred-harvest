@@ -42,7 +42,7 @@
 				<key>destinationuid</key>
 				<string>0D8D08EF-2F39-456A-AE56-29F019C948B4</string>
 				<key>modifiers</key>
-				<integer>524288</integer>
+				<integer>262144</integer>
 				<key>modifiersubtext</key>
 				<string>Delete this entry...</string>
 			</dict>
