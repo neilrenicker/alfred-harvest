@@ -66,6 +66,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>76E1F9D9-1782-43C5-AD1D-291CE54A50E8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>8C794BD0-83A9-4FD8-A874-F79E98B2CF5F</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>7C769085-368E-434E-A685-A9217515874D</key>
 		<array>
 			<dict>
@@ -79,6 +90,17 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>60CFCBE9-3D2A-4EFE-8138-8CA75A00801C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>8C794BD0-83A9-4FD8-A874-F79E98B2CF5F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>29E8C893-7C43-44C3-A085-C781EB89FA05</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -156,7 +178,7 @@
 				<key>keyword</key>
 				<string>hv toggle</string>
 				<key>runningsubtext</key>
-				<string>Generating your timesheet...</string>
+				<string>Finding today's tasks...</string>
 				<key>script</key>
 				<string>php -f harvest.php "{query}"</string>
 				<key>subtext</key>
@@ -254,6 +276,73 @@
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>3E52DA9F-CFC7-4CDA-93DD-252EBB63C898</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>keyword</key>
+				<string>hv note</string>
+				<key>runningsubtext</key>
+				<string>Finding today's tasks...</string>
+				<key>script</key>
+				<string>php -f note.php "{query}"</string>
+				<key>subtext</key>
+				<string>Choose a task to begin…</string>
+				<key>title</key>
+				<string>Add a task note</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>76E1F9D9-1782-43C5-AD1D-291CE54A50E8</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8C794BD0-83A9-4FD8-A874-F79E98B2CF5F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>29E8C893-7C43-44C3-A085-C781EB89FA05</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -557,9 +646,14 @@ View releases and download the latest: https://github.com/neilrenicker/alfred-ha
 		<key>1787F485-A642-494C-9371-DC70819172C4</key>
 		<dict>
 			<key>ypos</key>
-			<real>450</real>
+			<real>550</real>
 		</dict>
 		<key>19D06122-202C-4DBA-80DF-6923A5FDA091</key>
+		<dict>
+			<key>ypos</key>
+			<real>450</real>
+		</dict>
+		<key>29E8C893-7C43-44C3-A085-C781EB89FA05</key>
 		<dict>
 			<key>ypos</key>
 			<real>350</real>
@@ -567,7 +661,7 @@ View releases and download the latest: https://github.com/neilrenicker/alfred-ha
 		<key>3943AAE3-B117-4A2B-99DC-491B1C94C8A2</key>
 		<dict>
 			<key>ypos</key>
-			<real>350</real>
+			<real>450</real>
 		</dict>
 		<key>3E52DA9F-CFC7-4CDA-93DD-252EBB63C898</key>
 		<dict>
@@ -582,22 +676,32 @@ View releases and download the latest: https://github.com/neilrenicker/alfred-ha
 		<key>60CFCBE9-3D2A-4EFE-8138-8CA75A00801C</key>
 		<dict>
 			<key>ypos</key>
-			<real>650</real>
+			<real>750</real>
 		</dict>
 		<key>63B527C1-66CE-447A-8F7C-A007A9BC2ABA</key>
 		<dict>
 			<key>ypos</key>
-			<real>450</real>
+			<real>550</real>
 		</dict>
 		<key>648E677F-5B10-45F2-9595-606FBF4C43CD</key>
 		<dict>
 			<key>ypos</key>
-			<real>550</real>
+			<real>650</real>
+		</dict>
+		<key>76E1F9D9-1782-43C5-AD1D-291CE54A50E8</key>
+		<dict>
+			<key>ypos</key>
+			<real>350</real>
 		</dict>
 		<key>7C769085-368E-434E-A685-A9217515874D</key>
 		<dict>
 			<key>ypos</key>
-			<real>550</real>
+			<real>650</real>
+		</dict>
+		<key>8C794BD0-83A9-4FD8-A874-F79E98B2CF5F</key>
+		<dict>
+			<key>ypos</key>
+			<real>350</real>
 		</dict>
 		<key>A87D86DC-4941-4857-8BEC-A49BD68AFC93</key>
 		<dict>
@@ -607,12 +711,12 @@ View releases and download the latest: https://github.com/neilrenicker/alfred-ha
 		<key>B93A4B5E-096F-47BE-A58C-E1EE475CFFA9</key>
 		<dict>
 			<key>ypos</key>
-			<real>550</real>
+			<real>650</real>
 		</dict>
 		<key>B9AD2746-03ED-4B02-BEC5-0D492B3C4375</key>
 		<dict>
 			<key>ypos</key>
-			<real>350</real>
+			<real>450</real>
 		</dict>
 		<key>BBF74D0F-36D2-484B-8AC8-B61B1DC1EC64</key>
 		<dict>
