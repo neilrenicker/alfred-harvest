@@ -282,10 +282,27 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
 				<key>escaping</key>
 				<integer>127</integer>
+				<key>script</key>
+				<string>php -f note_post.php "{query}"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>8C794BD0-83A9-4FD8-A874-F79E98B2CF5F</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>0</integer>
 				<key>keyword</key>
 				<string>hv note</string>
 				<key>runningsubtext</key>
@@ -311,33 +328,20 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>escaping</key>
-				<integer>127</integer>
-				<key>script</key>
-				<string></string>
-				<key>type</key>
-				<integer>0</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>8C794BD0-83A9-4FD8-A874-F79E98B2CF5F</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
-				<false/>
+				<true/>
 				<key>output</key>
 				<integer>0</integer>
 				<key>removeextension</key>
 				<false/>
 				<key>sticky</key>
 				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Note added</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
