@@ -316,7 +316,7 @@
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
-				<false/>
+				<true/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
@@ -338,10 +338,8 @@
 				<false/>
 				<key>sticky</key>
 				<false/>
-				<key>text</key>
-				<string>{query}</string>
 				<key>title</key>
-				<string>Note added</string>
+				<string>Harvest note added!</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>

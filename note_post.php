@@ -1,24 +1,27 @@
 <?php
-
   $query = trim($argv[1]);
-  
-  require('auth.php');
-  $url = "https://$subdomain.harvestapp.com/daily/add";
 
-  // get id's from $query:
+  // get data from $query:
   $strings = explode( "|", $query);
-  $project_id = $strings[0];
-  $task_id = $strings[1];
-  $project = str_replace("_", " ", $strings[2]);
+  $entry_notes = $strings[0];
+  $entry_hours = $strings[1];
+  $entry_spent_at = $strings[2];
+  $entry_project_id = $strings[3];
+  $entry_task_id = $strings[4];
 
-  // get timezone from system and format date: 
+  // set default timezone to avoid warnings
   $tz_string = exec('systemsetup -gettimezone');
   $tz = substr( $tz_string, ( strpos( $tz_string, ": " ) + 2 ) );
   date_default_timezone_set( $tz );
-  $date = date("D, d M Y");
+  // reformat $entry_spent_at for posting to Harvest API
+  $entry_spent_at = date_create_from_format("Y-m-d", $entry_spent_at);
+  $entry_spent_at = $entry_spent_at->format("D, d M Y");
 
-  // set xml_data to post to Harvest API:
-  $xml_data = "<request> <notes></notes> <hours> </hours> <project_id>$project_id</project_id> <task_id>$task_id</task_id> <spent_at>$date</spent_at> </request>";
+  require('auth.php');
+  $url = "https://$subdomain.harvestapp.com/daily/update/$entry_task_id";
+
+  // build xml_data to post to Harvest API:
+  $xml_data = "<request> <notes>$entry_notes</notes> <hours>$entry_hours</hours> <spent_at type=\"date\">$entry_spent_at</spent_at> <project_id>$entry_project_id</project_id> <task_id>$entry_task_id</task_id> </request>";
 
   $headers = array (
     "Content-type: application/xml",
@@ -33,11 +36,11 @@
   curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
   curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
   curl_setopt($ch, CURLOPT_POST, 1);
-  curl_setopt($ch, CURLOPT_POSTFIELDS, $xml_data);
+  curl_setopt($ch, CURLOPT_POSTFIELDS, stripslashes($xml_data));
   curl_exec($ch);
   curl_close($ch);
 
-  $query = "Started —" . " " . $project;
+  $query = "success";
   echo $query;
 
 ?>

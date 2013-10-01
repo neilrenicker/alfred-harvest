@@ -25,9 +25,9 @@
 
       if ( !$query ) {
        if ( $active ) {
-          $xml .= "<item arg=\"$id\" valid=\"no\" uid=\"harvestcurrent\" autocomplete=\" $id → \">\n";
+          $xml .= "<item arg=\"$id\" valid=\"no\" uid=\"harvestcurrent\" autocomplete=\"$id → \">\n";
         } else {
-          $xml .= "<item arg=\"$id\" valid=\"no\" autocomplete=\" $id → \">\n";
+          $xml .= "<item arg=\"$id\" valid=\"no\" autocomplete=\"$id → \">\n";
         }
 
         $xml .= "<title>Add note: $project</title>\n";
@@ -41,9 +41,9 @@
         $xml .= "</item>\n";
       } elseif ( stripos($project . $client, $query) !== false ) {
         if ( $active ) {
-          $xml .= "<item arg=\"$id\" valid=\"no\" uid=\"harvestcurrent\" autocomplete=\" $id → \">\n";
+          $xml .= "<item arg=\"$id\" valid=\"no\" uid=\"harvestcurrent\" autocomplete=\"$id → \">\n";
         } else {
-          $xml .= "<item arg=\"$id\" valid=\"no\" autocomplete=\" $id → \">\n";
+          $xml .= "<item arg=\"$id\" valid=\"no\" autocomplete=\"$id → \">\n";
         }
 
         $xml .= "<title>Add note: $project</title>\n";
@@ -92,7 +92,11 @@
       $xml .= "</item>\n";
     } else {
       $newQuery = substr($newQuery, 1);
-      $xml .= "<item arg=\"$entry_notes|$entry_hours|$entry_spent_at|$entry_project_id|$entry_task_id\">\n";
+      if ($entry_notes) {
+        $xml .= "<item arg=\"$entry_notes $newQuery|$entry_hours|$entry_spent_at|$entry_project_id|$entry_task_id\">\n";
+      } else {
+        $xml .= "<item arg=\"$newQuery|$entry_hours|$entry_spent_at|$entry_project_id|$entry_task_id\">\n";
+      }
       $xml .= "<title>Add note: '$newQuery'</title>\n";
       $xml .= "<subtitle>$entry_project_name, $entry_task ($entry_hours hours)</subtitle>\n";
       $xml .= "<icon>icon.png</icon>\n";
