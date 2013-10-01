@@ -5,9 +5,14 @@
 
   if ( substr_count( $query, '→' ) == 0 ):
 
-    require('getdaily.php');
+    if ( !$query ) {
+      require('getdaily.php');
+      $data = json_decode($response, true);
+    } else {
+      $data_raw = file_get_contents($dir . 'projects.json');
+      $data = json_decode($data_raw, true);
+    }
 
-    $data = json_decode($response, true);
     $xml = "<?xml version=\"1.0\"?>\n<items>\n";
 
     foreach ($data["day_entries"] as $day_entry) {
@@ -18,22 +23,39 @@
       $active  = $day_entry["timer_started_at"];
       $id      = $day_entry["id"];
 
-      if ( $active ) {
-        $xml .= "<item valid=\"no\" uid=\"harvestcurrent\" autocomplete=\" $project ($task) → \">\n";
-      } else {
-        $xml .= "<item valid=\"no\" autocomplete=\" $project ($task) → \">\n";
+      if ( !$query ) {
+       if ( $active ) {
+          $xml .= "<item arg=\"$id\" valid=\"no\" uid=\"harvestcurrent\" autocomplete=\" $id → \">\n";
+        } else {
+          $xml .= "<item arg=\"$id\" valid=\"no\" autocomplete=\" $id → \">\n";
+        }
+
+        $xml .= "<title>Add note: $project</title>\n";
+        $xml .= "<subtitle>$client, $task ($hours hours)</subtitle>\n";
+
+        if ( $active ) {
+          $xml .= "<icon>stop.png</icon>\n";
+        } else {
+          $xml .= "<icon>go.png</icon>\n";
+        }
+        $xml .= "</item>\n";
+      } elseif ( stripos($project . $client, $query) !== false ) {
+        if ( $active ) {
+          $xml .= "<item arg=\"$id\" valid=\"no\" uid=\"harvestcurrent\" autocomplete=\" $id → \">\n";
+        } else {
+          $xml .= "<item arg=\"$id\" valid=\"no\" autocomplete=\" $id → \">\n";
+        }
+
+        $xml .= "<title>Add note: $project</title>\n";
+        $xml .= "<subtitle>$client, $task ($hours hours)</subtitle>\n";
+
+        if ( $active ) {
+          $xml .= "<icon>stop.png</icon>\n";
+        } else {
+          $xml .= "<icon>go.png</icon>\n";
+        }
+        $xml .= "</item>\n";
       }
-
-      $xml .= "<title>$hours hours – $project</title>\n";
-      $xml .= "<subtitle>$client, $task</subtitle>\n";
-
-      if ( $active ) {
-        $xml .= "<icon>stop.png</icon>\n";
-      } else {
-        $xml .= "<icon>go.png</icon>\n";
-      }
-
-      $xml .= "</item>\n";
     }
 
     $xml .= "</items>";
@@ -42,40 +64,39 @@
   elseif ( substr_count( $query, '→' ) == 1 ):
 
     $strings = explode( " →", $query);
-    $project_name = $strings[0];
+    $task_id = $strings[0];
     $newQuery = $strings[1];
     $data_raw = file_get_contents($dir . 'projects.json');
     $data = json_decode($data_raw, true);
 
-    foreach ( $data["projects"] as $project ){
+    foreach ( $data["day_entries"] as $entry ){
 
-      if ( $project["name"] == $project_name ) {
-        $project_tasks = $project["tasks"];
-        $project_name = $project["name"];
-        $project_id = $project["id"];
-        $project_name_encoded = str_replace(" ", "_", htmlspecialchars($project_name));
+      if ( $entry["id"] == $task_id ) {
+        $entry_notes = $entry["notes"];
+        $entry_hours = $entry["hours"];
+        $entry_spent_at = $entry["spent_at"];
+        $entry_project_id = $entry["project_id"];
+        $entry_task_id = $task_id;
+        $entry_project_name = htmlspecialchars($entry["project"]);
+        $entry_task = htmlspecialchars($entry["task"]);
       }
     }
 
     $xml = "<?xml version=\"1.0\"?>\n<items>\n";
 
-    foreach ($project_tasks as $task){
-      $task_name = htmlspecialchars($task["name"]);
-      $task_id = $task["id"];
-
-      if ( !$newQuery ) {
-        $xml .= "<item arg=\"$project_id|$task_id|$project_name_encoded\">\n";
-        $xml .= "<title>$task_name</title>\n";
-        $xml .= "<subtitle>Start this task</subtitle>\n";
-        $xml .= "<icon>go.png</icon>\n";
-        $xml .= "</item>\n";
-      } elseif ( stripos(" " . $task_name, $newQuery) !== false ) {
-        $xml .= "<item arg=\"$project_id|$task_id|$project_name_encoded\">\n";
-        $xml .= "<title>$task_name</title>\n";
-        $xml .= "<subtitle>Start this task</subtitle>\n";
-        $xml .= "<icon>go.png</icon>\n";
-        $xml .= "</item>\n";
-      }
+    if ( !$newQuery ) {
+      $xml .= "<item valid=\"no\">\n";
+      $xml .= "<title>Add note: '...'</title>\n";
+      $xml .= "<subtitle>$entry_project_name, $entry_task ($entry_hours hours)</subtitle>\n";
+      $xml .= "<icon>icon.png</icon>\n";
+      $xml .= "</item>\n";
+    } else {
+      $newQuery = substr($newQuery, 1);
+      $xml .= "<item arg=\"$entry_notes|$entry_hours|$entry_spent_at|$entry_project_id|$entry_task_id\">\n";
+      $xml .= "<title>Add note: '$newQuery'</title>\n";
+      $xml .= "<subtitle>$entry_project_name, $entry_task ($entry_hours hours)</subtitle>\n";
+      $xml .= "<icon>icon.png</icon>\n";
+      $xml .= "</item>\n";
     }
 
     $xml .= "</items>";

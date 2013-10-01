@@ -316,7 +316,7 @@
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
@@ -425,7 +425,7 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>1</integer>
+				<integer>2</integer>
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>keyword</key>
@@ -449,7 +449,7 @@ echo $xml;</string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
-				<true/>
+				<false/>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
@@ -734,6 +734,6 @@ View releases and download the latest: https://github.com/neilrenicker/alfred-ha
 		</dict>
 	</dict>
 	<key>webaddress</key>
-	<string>http://neilrenicker.com</string>
+	<string>https://github.com/neilrenicker/alfred-harvest</string>
 </dict>
 </plist>
