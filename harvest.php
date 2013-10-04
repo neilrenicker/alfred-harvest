@@ -14,6 +14,7 @@
       $project = htmlspecialchars($day_entry["project"]);
       $task    = htmlspecialchars($day_entry["task"]);
       $client  = htmlspecialchars($day_entry["client"]);
+      $notes   = htmlspecialchars($day_entry["notes"]);
       $hours   = $day_entry["hours"];
       $active  = $day_entry["timer_started_at"];
       $id      = $day_entry["id"];
@@ -25,8 +26,12 @@
       }
 
       $xml .= "<title>$hours hours – $project</title>\n";
-      $xml .= "<subtitle>$client, $task</subtitle>\n";
 
+      if ( $notes ) {
+        $xml .= "<subtitle>$client, $task – \"$notes\"</subtitle>\n";
+      } else {
+        $xml .= "<subtitle>$client, $task</subtitle>\n";
+      }
       if ( $active ) {
         $xml .= "<icon>stop.png</icon>\n";
       } else {
@@ -50,6 +55,7 @@
       $project = htmlspecialchars($day_entry["project"]);
       $task    = htmlspecialchars($day_entry["task"]);
       $client  = htmlspecialchars($day_entry["client"]);
+      $notes   = htmlspecialchars($day_entry["notes"]);
       $hours   = $day_entry["hours"];
       $active  = $day_entry["timer_started_at"];
       $id      = $day_entry["id"];
@@ -63,7 +69,12 @@
         }
 
         $xml .= "<title>$hours hours – $project</title>\n";
-        $xml .= "<subtitle>$client, $task</subtitle>\n";
+
+        if ( $notes ) {
+          $xml .= "<subtitle>$client, $task – \"$notes\"</subtitle>\n";
+        } else {
+          $xml .= "<subtitle>$client, $task</subtitle>\n";
+        }
 
         if ( $active ) {
           $xml .= "<icon>stop.png</icon>\n";

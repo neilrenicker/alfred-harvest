@@ -1,5 +1,6 @@
 <?php
   $query = trim($argv[1]);
+  $dir = "../../../Workflow Data/com.neilrenicker.harvest/";
 
   // get data from $query:
   $strings = explode( "|", $query);
@@ -40,7 +41,7 @@
   curl_exec($ch);
   curl_close($ch);
 
-  $query = "success";
+  $query = stripslashes($entry_notes);
   echo $query;
 
 ?>
