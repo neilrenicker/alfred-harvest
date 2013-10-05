@@ -714,35 +714,72 @@ end if</string>
 		</dict>
 	</array>
 	<key>readme</key>
-	<string>## Harvest workflow for Alfred
+	<string>## [Harvest][1] workflow for [Alfred][2]
 
-Let Alfred help you track your time. This workflow gives you complete access to your Harvest time-tracking:
+Let [Alfred][2] help you track your time. This workflow gives you complete access to your [Harvest][1] time-tracking:
 
-* view today's timesheet
+* view today's timers
 * start / stop a timer
+* view and add notes
+* launch your Harvest web app
 
-View releases and download the latest: https://github.com/neilrenicker/alfred-harvest/releases
-
-**Note:** Still work in progress. Don't share the workflow from within Alfred—unless you delete the `projects.txt` and `id.txt` within the workflow folder, you'll be sharing your projects and Harvest password with your friends.
+### [View releases and download](https://github.com/neilrenicker/alfred-harvest/releases)
 
 ## How to use:
 
-* Type `hset` to enter your Harvest subdomain, email, and password. **Note:** THIS_PART_IS_YOUR_SUBDOMAIN.harvestapp.com
-* Type `hv` to generate a list of your current projects
-* Press `enter` on the current timer to toggle tracking on it
-* Press `enter` on any other project to view available tasks, then press `enter` to begin tracking time on it
-* Hold `option` on any of today's active projects to delete today's time on that project</string>
+**Setup:**
+
+* Type `hv` to view all available triggers
+* Type `hv setup` to enter your Harvest subdomain, email, and password. **Note:** THIS_PART_IS_YOUR_SUBDOMAIN.harvestapp.com
+
+**Start a new timer:**
+
+1. Type `hv new` to list your current projects
+2. Press `enter` to select a project and list available tasks
+3. Press `enter` to begin the timer
+
+**Toggle today's timers**
+
+1. Type `hv toggle` to list today's timers
+2. Press `enter` to select a timer and toggle it on / off
+
+**Add a note:**
+
+1. Type `hv note` to list today's timers
+2. Press `enter` to select a timer
+3. Enter your note and press `enter`
+
+**Modifier keys:**
+
+* **Start a new timer, and immediately add a note:** *hold `command` while completing the second step of `hv new`*
+* **Delete one of today's timer entries:** *hold `option` while completing `hv toggle`*
+
+## Fun facts:
+
+* All text portions of the listings throughout the workflow are filterable. You can start typing within any of the workflows to filter items by project, task, client, and even note content!
+* If you haven't started a project for today, running `hv toggle` or `hv note` will display a shortcut to add a new timer.
+
+[1]: http://www.getharvest.com/
+[2]: http://www.alfredapp.com/
+
+---
+
+**Please note:** Passwords and project caching are stored in Alfred's "Workflow Data" folder. This means your Harvest login info isn't encrypted, although it is tucked away in a deep dark system folder.
+
+### Credits:
+
+"Pencil" icon courtesy [http://www.visualpharm.com/](http://www.visualpharm.com/) via [Creative Commons Attribution-NoDerivs 3.0 Unported](http://icons8.com/license/).</string>
 	<key>uidata</key>
 	<dict>
 		<key>0D8D08EF-2F39-456A-AE56-29F019C948B4</key>
 		<dict>
 			<key>ypos</key>
-			<real>460</real>
+			<real>450</real>
 		</dict>
 		<key>1787F485-A642-494C-9371-DC70819172C4</key>
 		<dict>
 			<key>ypos</key>
-			<real>760</real>
+			<real>750</real>
 		</dict>
 		<key>19D06122-202C-4DBA-80DF-6923A5FDA091</key>
 		<dict>
@@ -752,7 +789,7 @@ View releases and download the latest: https://github.com/neilrenicker/alfred-ha
 		<key>29E8C893-7C43-44C3-A085-C781EB89FA05</key>
 		<dict>
 			<key>ypos</key>
-			<real>560</real>
+			<real>550</real>
 		</dict>
 		<key>3943AAE3-B117-4A2B-99DC-491B1C94C8A2</key>
 		<dict>
@@ -762,62 +799,62 @@ View releases and download the latest: https://github.com/neilrenicker/alfred-ha
 		<key>4A67BAC3-0B1F-4588-A927-C99D01112342</key>
 		<dict>
 			<key>ypos</key>
-			<real>260</real>
+			<real>250</real>
 		</dict>
 		<key>557B6AF4-322F-4F28-9773-1293B7323E6C</key>
 		<dict>
 			<key>ypos</key>
-			<real>160</real>
+			<real>150</real>
 		</dict>
 		<key>60CFCBE9-3D2A-4EFE-8138-8CA75A00801C</key>
 		<dict>
 			<key>ypos</key>
-			<real>960</real>
+			<real>950</real>
 		</dict>
 		<key>63B527C1-66CE-447A-8F7C-A007A9BC2ABA</key>
 		<dict>
 			<key>ypos</key>
-			<real>760</real>
+			<real>750</real>
 		</dict>
 		<key>648E677F-5B10-45F2-9595-606FBF4C43CD</key>
 		<dict>
 			<key>ypos</key>
-			<real>860</real>
+			<real>850</real>
 		</dict>
 		<key>7504C18C-5903-44E8-80BE-132022F03E42</key>
 		<dict>
 			<key>ypos</key>
-			<real>660</real>
+			<real>650</real>
 		</dict>
 		<key>76E1F9D9-1782-43C5-AD1D-291CE54A50E8</key>
 		<dict>
 			<key>ypos</key>
-			<real>560</real>
+			<real>550</real>
 		</dict>
 		<key>7C769085-368E-434E-A685-A9217515874D</key>
 		<dict>
 			<key>ypos</key>
-			<real>860</real>
+			<real>850</real>
 		</dict>
 		<key>8C794BD0-83A9-4FD8-A874-F79E98B2CF5F</key>
 		<dict>
 			<key>ypos</key>
-			<real>560</real>
+			<real>550</real>
 		</dict>
 		<key>A87D86DC-4941-4857-8BEC-A49BD68AFC93</key>
 		<dict>
 			<key>ypos</key>
-			<real>260</real>
+			<real>250</real>
 		</dict>
 		<key>B733D784-1E26-4BE6-84B5-786FCEC9BBFE</key>
 		<dict>
 			<key>ypos</key>
-			<real>160</real>
+			<real>150</real>
 		</dict>
 		<key>B93A4B5E-096F-47BE-A58C-E1EE475CFFA9</key>
 		<dict>
 			<key>ypos</key>
-			<real>860</real>
+			<real>850</real>
 		</dict>
 		<key>B9AD2746-03ED-4B02-BEC5-0D492B3C4375</key>
 		<dict>
@@ -827,17 +864,17 @@ View releases and download the latest: https://github.com/neilrenicker/alfred-ha
 		<key>BBF74D0F-36D2-484B-8AC8-B61B1DC1EC64</key>
 		<dict>
 			<key>ypos</key>
-			<real>260</real>
+			<real>250</real>
 		</dict>
 		<key>C5BD3793-843D-4903-A7EB-BDA621C84AAF</key>
 		<dict>
 			<key>ypos</key>
-			<real>460</real>
+			<real>450</real>
 		</dict>
 		<key>E613ED78-BC6F-441E-B441-8C47EDCC289B</key>
 		<dict>
 			<key>ypos</key>
-			<real>360</real>
+			<real>350</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
