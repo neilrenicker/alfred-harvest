@@ -18,13 +18,13 @@
         $xml .= "<item valid=\"no\" autocomplete=\"$name → \">\n";
         $xml .= "<title>$name, $client</title>\n";
         $xml .= "<subtitle>View available tasks...</subtitle>\n";
-        $xml .= "<icon>add.png</icon>\n";
+        $xml .= "<icon>icons/add.png</icon>\n";
         $xml .= "</item>\n";
       } elseif ( stripos($name . $client, $query) !== false ) {
         $xml .= "<item valid=\"no\" autocomplete=\"$name → \">\n";
         $xml .= "<title>$name, $client</title>\n";
         $xml .= "<subtitle>View available tasks...</subtitle>\n";
-        $xml .= "<icon>add.png</icon>\n";
+        $xml .= "<icon>icons/add.png</icon>\n";
         $xml .= "</item>\n";
       }
     }
@@ -60,13 +60,13 @@
         $xml .= "<item arg=\"$project_id|$task_id|$project_name_encoded\">\n";
         $xml .= "<title>$task_name</title>\n";
         $xml .= "<subtitle>Start this task</subtitle>\n";
-        $xml .= "<icon>go.png</icon>\n";
+        $xml .= "<icon>icons/go.png</icon>\n";
         $xml .= "</item>\n";
       } elseif ( stripos(" " . $task_name, $newQuery) !== false ) {
         $xml .= "<item arg=\"$project_id|$task_id|$project_name_encoded\">\n";
         $xml .= "<title>$task_name</title>\n";
         $xml .= "<subtitle>Start this task</subtitle>\n";
-        $xml .= "<icon>go.png</icon>\n";
+        $xml .= "<icon>icons/go.png</icon>\n";
         $xml .= "</item>\n";
       }
     }

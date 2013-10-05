@@ -149,7 +149,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f toggle.php "{query}"</string>
+				<string>php -f commands/post_toggle.php "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -172,7 +172,7 @@
 				<key>runningsubtext</key>
 				<string>Finding today's tasks...</string>
 				<key>script</key>
-				<string>php -f harvest.php "{query}"</string>
+				<string>php -f commands/toggle.php "{query}"</string>
 				<key>subtext</key>
 				<string>Choose a task to toggle…</string>
 				<key>title</key>
@@ -243,7 +243,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f delete.php "{query}"</string>
+				<string>php -f commands/delete.php "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -260,7 +260,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f note_post.php "{query}"</string>
+				<string>php -f commands/post_note.php "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -283,7 +283,7 @@
 				<key>runningsubtext</key>
 				<string>Finding today's tasks...</string>
 				<key>script</key>
-				<string>php -f note.php "{query}"</string>
+				<string>php -f commands/note.php "{query}"</string>
 				<key>subtext</key>
 				<string>Choose a task to begin…</string>
 				<key>title</key>
@@ -331,7 +331,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>php -f new_post.php "{query}"</string>
+				<string>php -f commands/post_new.php "{query}"</string>
 				<key>type</key>
 				<integer>0</integer>
 			</dict>
@@ -354,7 +354,7 @@
 				<key>runningsubtext</key>
 				<string>Finding your projects...</string>
 				<key>script</key>
-				<string>php -f new.php "{query}"</string>
+				<string>php -f commands/new.php "{query}"</string>
 				<key>subtext</key>
 				<string>View available Harvest projects...</string>
 				<key>title</key>
@@ -538,7 +538,7 @@ elseif ( $step3 ):
   $id = "$step1\n$step2\n$step3";
   file_put_contents( $dir . 'id.txt', $id );
   echo "$id";
-  $setCache = system('php getdaily.php');
+  $setCache = system('php get_daily.php');
 endif;</string>
 				<key>type</key>
 				<integer>1</integer>

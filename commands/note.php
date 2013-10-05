@@ -6,7 +6,7 @@
   if ( substr_count( $query, '→' ) == 0 ):
 
     if ( !$query ) {
-      require('getdaily.php');
+      require('get_daily.php');
       $data = json_decode($response, true);
     } else {
       $data_raw = file_get_contents($dir . 'projects.json');
@@ -40,9 +40,9 @@
         }
 
         if ( $active ) {
-          $xml .= "<icon>note-active.png</icon>\n";
+          $xml .= "<icon>icons/note-active.png</icon>\n";
         } else {
-          $xml .= "<icon>note-inactive.png</icon>\n";
+          $xml .= "<icon>icons/note-inactive.png</icon>\n";
         }
         $xml .= "</item>\n";
       } elseif ( stripos($project . $task . $client . $notes, $query) !== false ) {
@@ -61,9 +61,9 @@
         }
 
         if ( $active ) {
-          $xml .= "<icon>note-active.png</icon>\n";
+          $xml .= "<icon>icons/note-active.png</icon>\n";
         } else {
-          $xml .= "<icon>note-inactive.png</icon>\n";
+          $xml .= "<icon>icons/note-inactive.png</icon>\n";
         }
         $xml .= "</item>\n";
       }
@@ -101,9 +101,9 @@
       $xml .= "<title>Add note: '...'</title>\n";
       $xml .= "<subtitle>$entry_project_name, $entry_task ($entry_hours hours)</subtitle>\n";
       if ( $active ) {
-        $xml .= "<icon>note-active.png</icon>\n";
+        $xml .= "<icon>icons/note-active.png</icon>\n";
       } else {
-        $xml .= "<icon>note-inactive.png</icon>\n";
+        $xml .= "<icon>icons/note-inactive.png</icon>\n";
       }
       $xml .= "</item>\n";
     } else {
@@ -116,9 +116,9 @@
       $xml .= "<title>Add note: '$newQuery'</title>\n";
       $xml .= "<subtitle>$entry_project_name, $entry_task ($entry_hours hours)</subtitle>\n";
       if ( $active ) {
-        $xml .= "<icon>note-active.png</icon>\n";
+        $xml .= "<icon>icons/note-active.png</icon>\n";
       } else {
-        $xml .= "<icon>note-inactive.png</icon>\n";
+        $xml .= "<icon>icons/note-inactive.png</icon>\n";
       }
       $xml .= "</item>\n";
     }

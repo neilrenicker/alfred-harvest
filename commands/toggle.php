@@ -5,7 +5,7 @@
 
   if ( !$query ) {
 
-    require('getdaily.php');
+    require('get_daily.php');
 
     $data = json_decode($response, true);
     $xml = "<?xml version=\"1.0\"?>\n<items>\n";
@@ -33,9 +33,9 @@
         $xml .= "<subtitle>$client, $task</subtitle>\n";
       }
       if ( $active ) {
-        $xml .= "<icon>stop.png</icon>\n";
+        $xml .= "<icon>icons/stop.png</icon>\n";
       } else {
-        $xml .= "<icon>go.png</icon>\n";
+        $xml .= "<icon>icons/go.png</icon>\n";
       }
 
       $xml .= "</item>\n";
@@ -77,9 +77,9 @@
         }
 
         if ( $active ) {
-          $xml .= "<icon>stop.png</icon>\n";
+          $xml .= "<icon>icons/stop.png</icon>\n";
         } else {
-          $xml .= "<icon>go.png</icon>\n";
+          $xml .= "<icon>icons/go.png</icon>\n";
         }
 
         $xml .= "</item>\n";
