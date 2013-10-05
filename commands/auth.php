@@ -10,5 +10,4 @@
   $email = $strings[1];
   $password = $strings[2];
   $credentials = $email . ":" . $password;
-
 ?>

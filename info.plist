@@ -540,7 +540,7 @@ end if</string>
 				<key>keyword</key>
 				<string>hv launch</string>
 				<key>script</key>
-				<string>require('auth.php');
+				<string>require('commands/auth.php');
 $url = "https://$subdomain.harvestapp.com";
 
 $xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
@@ -635,7 +635,7 @@ echo $xml;</string>
 			<key>config</key>
 			<dict>
 				<key>escaping</key>
-				<integer>62</integer>
+				<integer>0</integer>
 				<key>script</key>
 				<string>$in = trim( "{query}" );
 $dir = "../../../Workflow Data/com.neilrenicker.harvest/";
@@ -655,7 +655,7 @@ elseif ( $step3 ):
   $id = "$step1\n$step2\n$step3";
   file_put_contents( $dir . 'id.txt', $id );
   echo "$id";
-  $setCache = system('php get_daily.php');
+  $setCache = system('php commands/get_daily.php');
 endif;</string>
 				<key>type</key>
 				<integer>1</integer>

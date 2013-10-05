@@ -5,8 +5,13 @@
 
   if ( substr_count( $query, '→' ) == 0 ):
 
-    $data_raw = file_get_contents($dir . 'projects.json');
-    $data = json_decode($data_raw, true);
+    if (file_exists($dir . 'projects.json')) {
+      $data_raw = file_get_contents($dir . 'projects.json');
+      $data = json_decode($data_raw, true);
+    } else {
+      require('get_daily.php');
+      $data = json_decode($response, true);
+    }
 
     $xml = "<?xml version=\"1.0\"?>\n<items>\n";
 
@@ -38,8 +43,6 @@
     $strings = explode( " →", $query);
     $project_name = $strings[0];
     $newQuery = $strings[1];
-    $data_raw = file_get_contents($dir . 'projects.json');
-    $data = json_decode($data_raw, true);
 
     foreach ( $data["projects"] as $project ){
 
