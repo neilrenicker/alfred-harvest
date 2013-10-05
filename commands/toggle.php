@@ -21,9 +21,9 @@
         $id      = $day_entry["id"];
 
         if ( $active ) {
-          $xml .= "<item uid=\"harvesttoggle-$id\" arg=\"$id\">\n";
+          $xml .= "<item uid=\"harvesttoggle-current\" arg=\"$id\">\n";
         } else {
-          $xml .= "<item arg=\"$id\">\n";
+          $xml .= "<item arg=\"$id\" uid=\"harvesttoggle-$id\">\n";
         }
 
         $xml .= "<title>$hours hours – $project</title>\n";
@@ -73,9 +73,9 @@
         if ( stripos($project . $task . $client . $notes, $query) !== false ) {
       
           if ( $active ) {
-            $xml .= "<item uid=\"harvesttoggle-$id\" arg=\"$id\">\n";
+            $xml .= "<item uid=\"harvesttoggle-current\" arg=\"$id\">\n";
           } else {
-            $xml .= "<item arg=\"$id\">\n";
+            $xml .= "<item arg=\"$id\" uid=\"harvesttoggle-$id\">\n";
           }
 
           $xml .= "<title>$hours hours – $project</title>\n";

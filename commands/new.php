@@ -43,6 +43,8 @@
     $strings = explode( " →", $query);
     $project_name = $strings[0];
     $newQuery = $strings[1];
+    $data_raw = file_get_contents($dir . 'projects.json');
+    $data = json_decode($data_raw, true);
 
     foreach ( $data["projects"] as $project ){
 
