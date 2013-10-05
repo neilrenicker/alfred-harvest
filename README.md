@@ -18,16 +18,22 @@ Let [Alfred][2] help you track your time. This workflow gives you complete acces
 
 **Start a new timer:**
 
+![alfred-harvest new timer](http://f.cl.ly/items/0R2w093T4505281R272V/harvest-new.gif)
+
 1. Type `hv new` to list your current projects
 2. Press `enter` to select a project and list available tasks
 3. Press `enter` to begin the timer
 
 **Toggle today's timers**
 
+![alfred-harvest toggle timer](http://f.cl.ly/items/0V3d0B0T0H310q1C0X2S/harvest-toggle.gif)
+
 1. Type `hv toggle` to list today's timers
 2. Press `enter` to select a timer and toggle it on / off
 
 **Add a note:**
+
+![alfred-harvest add note](http://f.cl.ly/items/0P3B0b03102X2M2t153f/harvest-note.gif)
 
 1. Type `hv note` to list today's timers
 2. Press `enter` to select a timer
