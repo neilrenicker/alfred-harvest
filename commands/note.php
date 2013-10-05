@@ -26,9 +26,9 @@
 
       if ( !$query ) {
        if ( $active ) {
-          $xml .= "<item arg=\"$id\" valid=\"no\" uid=\"harvestcurrent\" autocomplete=\"$id → \">\n";
+          $xml .= "<item valid=\"no\" uid=\"harvestcurrent\" autocomplete=\"$id → \">\n";
         } else {
-          $xml .= "<item arg=\"$id\" valid=\"no\" autocomplete=\"$id → \">\n";
+          $xml .= "<item valid=\"no\" autocomplete=\"$id → \">\n";
         }
 
         $xml .= "<title>Add note: $project</title>\n";
@@ -47,9 +47,9 @@
         $xml .= "</item>\n";
       } elseif ( stripos($project . $task . $client . $notes, $query) !== false ) {
         if ( $active ) {
-          $xml .= "<item arg=\"$id\" valid=\"no\" uid=\"harvestcurrent\" autocomplete=\"$id → \">\n";
+          $xml .= "<item valid=\"no\" uid=\"harvestcurrent\" autocomplete=\"$id → \">\n";
         } else {
-          $xml .= "<item arg=\"$id\" valid=\"no\" autocomplete=\"$id → \">\n";
+          $xml .= "<item valid=\"no\" autocomplete=\"$id → \">\n";
         }
 
         $xml .= "<title>Add note: $project</title>\n";
