@@ -19,6 +19,7 @@
       $project = htmlspecialchars($day_entry["project"]);
       $task    = htmlspecialchars($day_entry["task"]);
       $client  = htmlspecialchars($day_entry["client"]);
+      $notes   = htmlspecialchars($day_entry["notes"]);
       $hours   = $day_entry["hours"];
       $active  = $day_entry["timer_started_at"];
       $id      = $day_entry["id"];
@@ -31,15 +32,20 @@
         }
 
         $xml .= "<title>Add note: $project</title>\n";
-        $xml .= "<subtitle>$client, $task ($hours hours)</subtitle>\n";
+        
+        if ( $notes ) {
+          $xml .= "<subtitle>$client, $task ($hours hours) – \"$notes\"</subtitle>\n";
+        } else {
+          $xml .= "<subtitle>$client, $task ($hours hours)</subtitle>\n";
+        }
 
         if ( $active ) {
-          $xml .= "<icon>stop.png</icon>\n";
+          $xml .= "<icon>note-active.png</icon>\n";
         } else {
-          $xml .= "<icon>go.png</icon>\n";
+          $xml .= "<icon>note-inactive.png</icon>\n";
         }
         $xml .= "</item>\n";
-      } elseif ( stripos($project . $client, $query) !== false ) {
+      } elseif ( stripos($project . $task . $client . $notes, $query) !== false ) {
         if ( $active ) {
           $xml .= "<item arg=\"$id\" valid=\"no\" uid=\"harvestcurrent\" autocomplete=\"$id → \">\n";
         } else {
@@ -47,12 +53,17 @@
         }
 
         $xml .= "<title>Add note: $project</title>\n";
-        $xml .= "<subtitle>$client, $task ($hours hours)</subtitle>\n";
+        
+        if ( $notes ) {
+          $xml .= "<subtitle>$client, $task ($hours hours) – \"$notes\"</subtitle>\n";
+        } else {
+          $xml .= "<subtitle>$client, $task ($hours hours)</subtitle>\n";
+        }
 
         if ( $active ) {
-          $xml .= "<icon>stop.png</icon>\n";
+          $xml .= "<icon>note-active.png</icon>\n";
         } else {
-          $xml .= "<icon>go.png</icon>\n";
+          $xml .= "<icon>note-inactive.png</icon>\n";
         }
         $xml .= "</item>\n";
       }
@@ -79,6 +90,7 @@
         $entry_task_id = $task_id;
         $entry_project_name = htmlspecialchars($entry["project"]);
         $entry_task = htmlspecialchars($entry["task"]);
+        $active  = $entry["timer_started_at"];
       }
     }
 
@@ -88,7 +100,11 @@
       $xml .= "<item valid=\"no\">\n";
       $xml .= "<title>Add note: '...'</title>\n";
       $xml .= "<subtitle>$entry_project_name, $entry_task ($entry_hours hours)</subtitle>\n";
-      $xml .= "<icon>icon.png</icon>\n";
+      if ( $active ) {
+        $xml .= "<icon>note-active.png</icon>\n";
+      } else {
+        $xml .= "<icon>note-inactive.png</icon>\n";
+      }
       $xml .= "</item>\n";
     } else {
       $newQuery = substr($newQuery, 1);
@@ -99,7 +115,11 @@
       }
       $xml .= "<title>Add note: '$newQuery'</title>\n";
       $xml .= "<subtitle>$entry_project_name, $entry_task ($entry_hours hours)</subtitle>\n";
-      $xml .= "<icon>icon.png</icon>\n";
+      if ( $active ) {
+        $xml .= "<icon>note-active.png</icon>\n";
+      } else {
+        $xml .= "<icon>note-inactive.png</icon>\n";
+      }
       $xml .= "</item>\n";
     }
 

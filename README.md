@@ -30,3 +30,7 @@ Let [Alfred][2] help you track your time. This workflow gives you complete acces
 
 [1]: http://www.getharvest.com/
 [2]: http://www.alfredapp.com/
+
+### Credit:
+
+* "Pencil" icon courtesy [http://www.visualpharm.com/](http://www.visualpharm.com/) via [Creative Commons Attribution-NoDerivs 3.0 Unported](http://icons8.com/license/).

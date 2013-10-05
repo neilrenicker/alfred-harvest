@@ -60,7 +60,7 @@
       $active  = $day_entry["timer_started_at"];
       $id      = $day_entry["id"];
 
-      if ( stripos($project, $query) !== false ) {
+      if ( stripos($project . $task . $client . $notes, $query) !== false ) {
     
         if ( $active ) {
           $xml .= "<item uid=\"harvestcurrent-$id\" arg=\"$id\">\n";

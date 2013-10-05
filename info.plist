@@ -176,7 +176,7 @@
 				<key>subtext</key>
 				<string>Choose a task to toggle…</string>
 				<key>title</key>
-				<string>Toggle today's timers</string>
+				<string>Toggle: Start / stop today's timers</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -287,7 +287,7 @@
 				<key>subtext</key>
 				<string>Choose a task to begin…</string>
 				<key>title</key>
-				<string>Add a task note</string>
+				<string>Note: Add a task note</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -358,7 +358,7 @@
 				<key>subtext</key>
 				<string>View available Harvest projects...</string>
 				<key>title</key>
-				<string>Start new timer</string>
+				<string>New: Start new timer</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -420,7 +420,7 @@ echo $xml;</string>
 				<key>subtext</key>
 				<string>Launch Harvest account in a browser</string>
 				<key>title</key>
-				<string>Launch Harvest account</string>
+				<string>Launch: Visit Harvest account</string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
@@ -501,7 +501,7 @@ echo $xml;</string>
 				<key>subtext</key>
 				<string>Required: Harvest domain, email, and password</string>
 				<key>title</key>
-				<string>Set Harvest credentials</string>
+				<string>Setup: Set Harvest credentials</string>
 				<key>type</key>
 				<integer>1</integer>
 				<key>withspace</key>
