@@ -46,7 +46,7 @@
       $xml .= "<item>\n";
       $xml .= "<title>No timers yet today. Start one?</title>\n";
       $xml .= "<subtitle>Press 'Enter' to select a new timer...</subtitle>\n";
-      $xml .= "<icon>icons/icon.png</icon>\n";
+      $xml .= "<icon>icons/add.png</icon>\n";
       $xml .= "</item>\n";
     }
 
@@ -99,7 +99,7 @@
       $xml .= "<item>\n";
       $xml .= "<title>No timers yet today. Start one?</title>\n";
       $xml .= "<subtitle>Press 'Enter' to select a new timer...</subtitle>\n";
-      $xml .= "<icon>icons/icon.png</icon>\n";
+      $xml .= "<icon>icons/add.png</icon>\n";
       $xml .= "</item>\n";
     }
     
