@@ -20,7 +20,7 @@
       $id      = $day_entry["id"];
 
       if ( $active ) {
-        $xml .= "<item uid=\"harvestcurrent-$id\" arg=\"$id\">\n";
+        $xml .= "<item uid=\"harvesttoggle-$id\" arg=\"$id\">\n";
       } else {
         $xml .= "<item arg=\"$id\">\n";
       }
@@ -63,7 +63,7 @@
       if ( stripos($project . $task . $client . $notes, $query) !== false ) {
     
         if ( $active ) {
-          $xml .= "<item uid=\"harvestcurrent-$id\" arg=\"$id\">\n";
+          $xml .= "<item uid=\"harvesttoggle-$id\" arg=\"$id\">\n";
         } else {
           $xml .= "<item arg=\"$id\">\n";
         }
