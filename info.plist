@@ -581,7 +581,7 @@ echo $xml;</string>
 $dir = "../../../Workflow Data/com.neilrenicker.harvest/";
 
 if (!is_dir($dir)) {
-  mkdir($dir);         
+  mkdir($dir, 0777, true);         
 }
 
 $step1 = ( file_exists( $dir . 'step1.txt' ) ) ? file_get_contents( $dir . 'step1.txt' ) : false;
