@@ -11,10 +11,16 @@
   $task_id = $strings[1];
   $project = str_replace("_", " ", $strings[2]);
 
-  // get timezone from system and format date: 
-  $tz_string = exec('systemsetup -gettimezone');
-  $tz = substr( $tz_string, ( strpos( $tz_string, ": " ) + 2 ) );
+  $default_tz = "UTC";
+  $tz_file = readlink("/etc/localtime");
+  $pos = strpos($tz_file, "zoneinfo");
+  if ($pos) {
+    $tz = substr($tz_file, $pos + strlen("zoneinfo/"));
+  } else {
+    $tz = $default_tz;
+  }
   date_default_timezone_set( $tz );
+
   $date = date("D, d M Y");
 
   // set xml_data to post to Harvest API:
