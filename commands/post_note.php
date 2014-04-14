@@ -11,9 +11,14 @@
     $entry_project_id = $strings[3];
     $entry_task_id = $strings[4];
 
-    // set default timezone to avoid warnings
-    $tz_string = exec('systemsetup -gettimezone');
-    $tz = substr( $tz_string, ( strpos( $tz_string, ": " ) + 2 ) );
+    $default_tz = "UTC";
+    $tz_file = readlink("/etc/localtime");
+    $pos = strpos($tz_file, "zoneinfo");
+    if ($pos) {
+      $tz = substr($tz_file, $pos + strlen("zoneinfo/"));
+    } else {
+      $tz = $default_tz;
+    }
     date_default_timezone_set( $tz );
     // reformat $entry_spent_at for posting to Harvest API
     $entry_spent_at = date_create_from_format("Y-m-d", $entry_spent_at);
