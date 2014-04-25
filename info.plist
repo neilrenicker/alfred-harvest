@@ -655,7 +655,7 @@ elseif ( $step3 ):
   unlink( $dir . 'step2.txt' );
   $id = "$step1\n$step2";
   file_put_contents( $dir . 'id.txt', $id );
-  shell_exec('/usr/bin/security -v add-generic-password -a alfred-harvest -l alfred-harvest -s alfred-harvest-workflow -w \'' . $step3 . '\' &gt; /dev/null 2&gt;&amp;1');
+  shell_exec('/usr/bin/security -v add-generic-password -a alfred-harvest -l alfred-harvest -s alfred-harvest-workflow -w ' . escapeshellarg($step3) . ' &gt; /dev/null 2&gt;&amp;1');
   $setCache = system('php commands/get_daily.php');
 endif;</string>
 				<key>type</key>
