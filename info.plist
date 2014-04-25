@@ -640,6 +640,7 @@ echo $xml;</string>
 				<string>$in = trim( "{query}" );
 $dir = "../../../Workflow Data/com.neilrenicker.harvest/";
 
+shell_exec('/usr/bin/security delete-generic-password -s alfred-harvest-workflow');
 
 $step1 = ( file_exists( $dir . 'step1.txt' ) ) ? file_get_contents( $dir . 'step1.txt' ) : false;
 $step2 = ( file_exists( $dir . 'step2.txt' ) ) ? file_get_contents( $dir . 'step2.txt' ) : false;
@@ -652,9 +653,9 @@ elseif ( !$step2 ):
 elseif ( $step3 ):
   unlink( $dir . 'step1.txt' );
   unlink( $dir . 'step2.txt' );
-  $id = "$step1\n$step2\n$step3";
+  $id = "$step1\n$step2";
   file_put_contents( $dir . 'id.txt', $id );
-  echo "$id";
+  shell_exec('/usr/bin/security -v add-generic-password -a alfred-harvest -l alfred-harvest -s alfred-harvest-workflow -w \'' . $step3 . '\'');
   $setCache = system('php commands/get_daily.php');
 endif;</string>
 				<key>type</key>
