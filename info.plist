@@ -541,7 +541,7 @@ end if</string>
 				<string>hv launch</string>
 				<key>script</key>
 				<string>require('commands/auth.php');
-$url = "https://$subdomain.harvestapp.com";
+$url = "https://$subdomain.harvestapp.com/time";
 
 $xml = "&lt;?xml version=\"1.0\"?&gt;\n&lt;items&gt;\n";
 $xml .= "&lt;item uid=\"harvestaccount\" arg=\"$url\"&gt;\n";
