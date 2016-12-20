@@ -280,7 +280,7 @@
 				<key>escaping</key>
 				<integer>127</integer>
 				<key>script</key>
-				<string>tell application "Alfred 2" to search "hv note "</string>
+				<string>tell application "Alfred 3" to search "hv note "</string>
 				<key>type</key>
 				<integer>6</integer>
 			</dict>
@@ -370,7 +370,7 @@
 				<key>script</key>
 				<string>set temp to "{query}"
 if temp is "" then
-	tell application "Alfred 2" to search "hv new "
+	tell application "Alfred 3" to search "hv new "
 end if</string>
 				<key>type</key>
 				<integer>6</integer>
@@ -501,7 +501,7 @@ end if</string>
 				<key>script</key>
 				<string>set temp to "{query}"
 if temp is "" then
-	tell application "Alfred 2" to search "hv new "
+	tell application "Alfred 3" to search "hv new "
 end if</string>
 				<key>type</key>
 				<integer>6</integer>
@@ -700,7 +700,7 @@ endif;</string>
 				<key>script</key>
 				<string>set temp to "{query}"
 if temp is "" then
-	tell application "Alfred 2" to search "hv setup "
+	tell application "Alfred 3" to search "hv setup "
 end if</string>
 				<key>type</key>
 				<integer>6</integer>
