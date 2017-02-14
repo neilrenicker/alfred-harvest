@@ -14,6 +14,7 @@ Let [Alfred][2] help you track your time. This workflow gives you complete acces
 **Setup:**
 
 * Type `hv` to view all available triggers
+* *On Mavericks (10.9)* Type `hv prep` to create the necessary folders for storing workflow data.
 * Type `hv setup` to enter your Harvest subdomain, email, and password. **Note:** THIS_PART_IS_YOUR_SUBDOMAIN.harvestapp.com
 
 **Start a new timer:**

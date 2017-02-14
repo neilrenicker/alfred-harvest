@@ -66,6 +66,17 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>6D9ECAA6-A189-4279-A863-DC79493A55F4</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>CB343064-8BCF-49F9-AC95-B8EA1337A388</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>76E1F9D9-1782-43C5-AD1D-291CE54A50E8</key>
 		<array>
 			<dict>
@@ -173,6 +184,17 @@
 				<integer>1048576</integer>
 				<key>modifiersubtext</key>
 				<string>Start this task and then add a note...</string>
+			</dict>
+		</array>
+		<key>CB343064-8BCF-49F9-AC95-B8EA1337A388</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F5E7723D-313D-485D-AC9C-102950BE46AB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
 			</dict>
 		</array>
 	</dict>
@@ -712,6 +734,69 @@ end if</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>hv prep</string>
+				<key>subtext</key>
+				<string>Setup step for Mavericks users</string>
+				<key>text</key>
+				<string>Set up directories</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6D9ECAA6-A189-4279-A863-DC79493A55F4</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>mkdir -p "../../../Workflow Data/com.neilrenicker.harvest/"</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>CB343064-8BCF-49F9-AC95-B8EA1337A388</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>Run 'hv setup' next to sign in to Harvest</string>
+				<key>title</key>
+				<string>All ready</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F5E7723D-313D-485D-AC9C-102950BE46AB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string>## [Harvest][1] workflow for [Alfred][2]
@@ -821,6 +906,11 @@ Let [Alfred][2] help you track your time. This workflow gives you complete acces
 			<key>ypos</key>
 			<real>850</real>
 		</dict>
+		<key>6D9ECAA6-A189-4279-A863-DC79493A55F4</key>
+		<dict>
+			<key>ypos</key>
+			<real>970</real>
+		</dict>
 		<key>7504C18C-5903-44E8-80BE-132022F03E42</key>
 		<dict>
 			<key>ypos</key>
@@ -871,10 +961,20 @@ Let [Alfred][2] help you track your time. This workflow gives you complete acces
 			<key>ypos</key>
 			<real>450</real>
 		</dict>
+		<key>CB343064-8BCF-49F9-AC95-B8EA1337A388</key>
+		<dict>
+			<key>ypos</key>
+			<real>970</real>
+		</dict>
 		<key>E613ED78-BC6F-441E-B441-8C47EDCC289B</key>
 		<dict>
 			<key>ypos</key>
 			<real>350</real>
+		</dict>
+		<key>F5E7723D-313D-485D-AC9C-102950BE46AB</key>
+		<dict>
+			<key>ypos</key>
+			<real>1070</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
