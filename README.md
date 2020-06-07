@@ -1,3 +1,7 @@
+# Unmaintained Repository
+
+⚠️ This repository is unmaintained. Head over to https://github.com/ajilderda/alfred-harvest-v2/ for a rewritten version of this plugin with more features and better security.
+
 ## [Harvest][1] workflow for [Alfred][2]
 
 Let [Alfred][2] help you track your time. This workflow gives you complete access to your [Harvest][1] time-tracking:
