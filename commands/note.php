@@ -118,11 +118,7 @@
         $xml .= "</item>\n";
       } else {
         $newQuery = substr($newQuery, 1);
-        if ($entry_notes) {
-          $xml .= "<item arg=\"$entry_notes $newQuery|$entry_hours|$entry_spent_at|$entry_project_id|$entry_task_id\">\n";
-        } else {
-          $xml .= "<item arg=\"$newQuery|$entry_hours|$entry_spent_at|$entry_project_id|$entry_task_id\">\n";
-        }
+        $xml .= "<item arg=\"$newQuery|$entry_hours|$entry_spent_at|$entry_project_id|$entry_task_id\">\n";
         $xml .= "<title>Add note: '$newQuery'</title>\n";
         $xml .= "<subtitle>$entry_project_name, $entry_task ($entry_hours hours)</subtitle>\n";
         if ( $active ) {
